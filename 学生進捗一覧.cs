@@ -20,7 +20,7 @@ namespace HL_塾管理
 
         //データベース接続情報
         private string connectionString = ComClass.connectionString;
-        //private string connectionString = "Integrated Security=True; Server=WANGQIAN\\MSSQLSERVER01; Database=test; Connection Timeout=60";
+
 
         //セル編集フラグ
         private bool isEditing = false;
@@ -92,7 +92,7 @@ namespace HL_塾管理
                 //this.toolStripStatusLabel2.Text = "DBサーバーの接続に失敗しました.";               
                 return;
             }
-            //d.予定完成時間
+
             string str_sqlcmd = @"select a.学生コード,c.名前,e.クラス名,d.宿題名,d.宿題コード,a.宿題完成度,a.開始日,a.終了日,d.予定完成時間 " +
                                 "from HL_JUKUKANRI_学生進捗 AS a " +
                                 "left join HL_JUKUKANRI_学生クラス AS b " +
@@ -371,7 +371,18 @@ namespace HL_塾管理
         /// </summary>
         private void 宿題履歴ToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            if (((Form1)(this.Tag)).m_宿題履歴Handle != IntPtr.Zero)
+            {
+                BringWindowToTop(((Form1)(this.Tag)).m_宿題履歴Handle);
+                return;
+            }
 
+            宿題履歴 m_NewForm_宿題履歴 = new 宿題履歴();
+            m_NewForm_宿題履歴.Tag = ((Form1)(this.Tag));
+            m_NewForm_宿題履歴.StudentCode = this.gv_studentsInfo.CurrentRow.Cells["学生番号"].Value.ToString();
+            m_NewForm_宿題履歴.Show(((Form1)(this.Tag)).dockPanel1);
+            ((Form1)(this.Tag)).m_宿題履歴Handle = m_NewForm_宿題履歴.Handle;
+            toolStripStatusLabel2.Text = "";
         }
 
         /// <summary>

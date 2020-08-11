@@ -32,16 +32,8 @@ namespace HL_塾管理
         public IntPtr m_クラス変更Handle = IntPtr.Zero;
         public IntPtr m_クラス参照Handle = IntPtr.Zero;
         //end
-        //add chen
-        public IntPtr m_学生評価Handle = IntPtr.Zero;
-        public IntPtr m_学生評価追加Handle = IntPtr.Zero;
-        //end
-        public IntPtr m_学生進捗一覧Handle = IntPtr.Zero;
-        public IntPtr m_宿題一覧Handle = IntPtr.Zero;
-        public IntPtr m_宿題履歴Handle = IntPtr.Zero;
-       
+
         public IntPtr m_教室マスタ登録Handle = IntPtr.Zero;
-        public IntPtr m_歴史教師一覧Handle = IntPtr.Zero;
         public IntPtr m_歴史クラス一覧Handle = IntPtr.Zero;
         
         //liu rui add 20200416
@@ -79,6 +71,15 @@ namespace HL_塾管理
         //wang add 20200717
         public IntPtr m_出勤記録新規追加画面Handle = IntPtr.Zero;
         //end
+
+
+        //wangqian add 20200804
+        public IntPtr m_学生進捗一覧Handle = IntPtr.Zero;
+        public IntPtr m_宿題一覧Handle = IntPtr.Zero;
+        //end
+        public IntPtr m_学生評価Handle = IntPtr.Zero;
+        public IntPtr m_学生評価追加Handle = IntPtr.Zero;
+        public IntPtr m_宿題履歴Handle = IntPtr.Zero;
 
         public Dictionary<string, int> codeDic = new Dictionary<string, int>();
         public ユーザ登録 m_ユーザ登録 = null;
@@ -132,6 +133,15 @@ namespace HL_塾管理
         // Linh add 20200616 
         教師クラス履歴一覧 m_NewForm_教師クラス履歴一覧 = new 教師クラス履歴一覧();
         // end
+
+        //wangqian add 20200804
+        学生進捗一覧 m_NewForm_学生進捗一覧 = new 学生進捗一覧();
+        宿題一覧 m_NewForm_宿題一覧 = new 宿題一覧();
+        //end
+        学生評価 m_NewForm_学生評価Handle = new 学生評価();
+        学生評価追加 m_NewForm_学生評価追加Handle = new 学生評価追加();
+        宿題履歴 m_NewForm_宿題履歴Handle = new 宿題履歴();
+
         public Form1()
         {
             InitializeComponent();
@@ -336,7 +346,7 @@ namespace HL_塾管理
                 if (this.m_教師クラス履歴一覧Handle != null)
                 {
                     SendMessage(this.m_教師クラス履歴一覧Handle, CUSTOM_MESSAGE, IntPtr.Zero, IntPtr.Zero);
-                }               
+                }
                 // end
 
             }
@@ -760,5 +770,42 @@ namespace HL_塾管理
             m_NewForm_教室登録.ShowDialog();
         }
         //tong 20200515 end*
+
+        //wangqian add 20200804 start
+        /// <summary>
+        /// 学生進捗一覧画面を開く
+        /// </summary>
+        private void 学生進捗一覧ToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            if (this.m_学生進捗一覧Handle != IntPtr.Zero)
+            {
+                BringWindowToTop(this.m_学生進捗一覧Handle);
+                return;
+            }
+
+            m_NewForm_学生進捗一覧 = new 学生進捗一覧();
+            m_NewForm_学生進捗一覧.Tag = this;
+            m_NewForm_学生進捗一覧.Show(this.dockPanel1);
+            this.m_学生進捗一覧Handle = m_NewForm_学生進捗一覧.Handle;
+            toolStripStatusLabel2.Text = "";
+        }
+        /// <summary>
+        /// 宿題一覧画面を開く
+        /// </summary>
+        private void 宿題一覧ToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            if (this.m_宿題一覧Handle != IntPtr.Zero)
+            {
+                BringWindowToTop(this.m_宿題一覧Handle);
+                return;
+            }
+
+            m_NewForm_宿題一覧 = new 宿題一覧();
+            m_NewForm_宿題一覧.Tag = this;
+            m_NewForm_宿題一覧.Show(this.dockPanel1);
+            this.m_宿題一覧Handle = m_NewForm_宿題一覧.Handle;
+            toolStripStatusLabel2.Text = "";
+        }
+        //wangqian add 20200804 end
     }
 }

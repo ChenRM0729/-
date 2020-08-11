@@ -41,13 +41,6 @@
             this.btn_search = new System.Windows.Forms.Button();
             this.btn_クラス宿題分配 = new System.Windows.Forms.Button();
             this.gv_studentsInfo = new System.Windows.Forms.DataGridView();
-            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.宿題分配ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.宿題履歴ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.statusStrip1 = new System.Windows.Forms.StatusStrip();
-            this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
-            this.toolStripStatusLabel2 = new System.Windows.Forms.ToolStripStatusLabel();
-            this.btn_宿題一覧 = new System.Windows.Forms.Button();
             this.学生番号 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.学生名前 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.クラス = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -58,6 +51,13 @@
             this.開始日 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.予定完成時間 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.終了日 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.宿題分配ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.宿題履歴ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.statusStrip1 = new System.Windows.Forms.StatusStrip();
+            this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
+            this.toolStripStatusLabel2 = new System.Windows.Forms.ToolStripStatusLabel();
+            this.btn_宿題一覧 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.gv_studentsInfo)).BeginInit();
             this.contextMenuStrip1.SuspendLayout();
             this.statusStrip1.SuspendLayout();
@@ -131,59 +131,6 @@
             this.gv_studentsInfo.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.gv_studentsInfo_CellValueChanged);
             this.gv_studentsInfo.DataError += new System.Windows.Forms.DataGridViewDataErrorEventHandler(this.gv_studentsInfo_DataError);
             // 
-            // contextMenuStrip1
-            // 
-            this.contextMenuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
-            this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.宿題分配ToolStripMenuItem,
-            this.宿題履歴ToolStripMenuItem});
-            this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(139, 52);
-            // 
-            // 宿題分配ToolStripMenuItem
-            // 
-            this.宿題分配ToolStripMenuItem.Name = "宿題分配ToolStripMenuItem";
-            this.宿題分配ToolStripMenuItem.Size = new System.Drawing.Size(138, 24);
-            this.宿題分配ToolStripMenuItem.Text = "課題分配";
-            // 
-            // 宿題履歴ToolStripMenuItem
-            // 
-            this.宿題履歴ToolStripMenuItem.Name = "宿題履歴ToolStripMenuItem";
-            this.宿題履歴ToolStripMenuItem.Size = new System.Drawing.Size(138, 24);
-            this.宿題履歴ToolStripMenuItem.Text = "課題履歴";
-            // 
-            // statusStrip1
-            // 
-            this.statusStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
-            this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripStatusLabel1,
-            this.toolStripStatusLabel2});
-            this.statusStrip1.Location = new System.Drawing.Point(0, 530);
-            this.statusStrip1.Name = "statusStrip1";
-            this.statusStrip1.Size = new System.Drawing.Size(957, 22);
-            this.statusStrip1.TabIndex = 8;
-            this.statusStrip1.Text = "statusStrip1";
-            // 
-            // toolStripStatusLabel1
-            // 
-            this.toolStripStatusLabel1.Name = "toolStripStatusLabel1";
-            this.toolStripStatusLabel1.Size = new System.Drawing.Size(0, 17);
-            // 
-            // toolStripStatusLabel2
-            // 
-            this.toolStripStatusLabel2.Name = "toolStripStatusLabel2";
-            this.toolStripStatusLabel2.Size = new System.Drawing.Size(0, 17);
-            // 
-            // btn_宿題一覧
-            // 
-            this.btn_宿題一覧.Location = new System.Drawing.Point(697, 34);
-            this.btn_宿題一覧.Name = "btn_宿題一覧";
-            this.btn_宿題一覧.Size = new System.Drawing.Size(103, 34);
-            this.btn_宿題一覧.TabIndex = 5;
-            this.btn_宿題一覧.Text = "課題一覧";
-            this.btn_宿題一覧.UseVisualStyleBackColor = true;
-            this.btn_宿題一覧.Click += new System.EventHandler(this.btn_宿題一覧_Click);
-            // 
             // 学生番号
             // 
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
@@ -251,7 +198,6 @@
             // 
             // 予定完成時間
             // 
-            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
             this.予定完成時間.DefaultCellStyle = dataGridViewCellStyle7;
             this.予定完成時間.HeaderText = "予定完成時間";
             this.予定完成時間.Name = "予定完成時間";
@@ -262,6 +208,60 @@
             this.終了日.HeaderText = "終了日";
             this.終了日.Name = "終了日";
             this.終了日.Visible = false;
+            // 
+            // contextMenuStrip1
+            // 
+            this.contextMenuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
+            this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.宿題分配ToolStripMenuItem,
+            this.宿題履歴ToolStripMenuItem});
+            this.contextMenuStrip1.Name = "contextMenuStrip1";
+            this.contextMenuStrip1.Size = new System.Drawing.Size(176, 80);
+            // 
+            // 宿題分配ToolStripMenuItem
+            // 
+            this.宿題分配ToolStripMenuItem.Name = "宿題分配ToolStripMenuItem";
+            this.宿題分配ToolStripMenuItem.Size = new System.Drawing.Size(175, 24);
+            this.宿題分配ToolStripMenuItem.Text = "課題分配";
+            // 
+            // 宿題履歴ToolStripMenuItem
+            // 
+            this.宿題履歴ToolStripMenuItem.Name = "宿題履歴ToolStripMenuItem";
+            this.宿題履歴ToolStripMenuItem.Size = new System.Drawing.Size(175, 24);
+            this.宿題履歴ToolStripMenuItem.Text = "課題履歴";
+            this.宿題履歴ToolStripMenuItem.Click += new System.EventHandler(this.宿題履歴ToolStripMenuItem_Click);
+            // 
+            // statusStrip1
+            // 
+            this.statusStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
+            this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripStatusLabel1,
+            this.toolStripStatusLabel2});
+            this.statusStrip1.Location = new System.Drawing.Point(0, 530);
+            this.statusStrip1.Name = "statusStrip1";
+            this.statusStrip1.Size = new System.Drawing.Size(957, 22);
+            this.statusStrip1.TabIndex = 8;
+            this.statusStrip1.Text = "statusStrip1";
+            // 
+            // toolStripStatusLabel1
+            // 
+            this.toolStripStatusLabel1.Name = "toolStripStatusLabel1";
+            this.toolStripStatusLabel1.Size = new System.Drawing.Size(0, 17);
+            // 
+            // toolStripStatusLabel2
+            // 
+            this.toolStripStatusLabel2.Name = "toolStripStatusLabel2";
+            this.toolStripStatusLabel2.Size = new System.Drawing.Size(0, 17);
+            // 
+            // btn_宿題一覧
+            // 
+            this.btn_宿題一覧.Location = new System.Drawing.Point(697, 34);
+            this.btn_宿題一覧.Name = "btn_宿題一覧";
+            this.btn_宿題一覧.Size = new System.Drawing.Size(103, 34);
+            this.btn_宿題一覧.TabIndex = 5;
+            this.btn_宿題一覧.Text = "課題一覧";
+            this.btn_宿題一覧.UseVisualStyleBackColor = true;
+            this.btn_宿題一覧.Click += new System.EventHandler(this.btn_宿題一覧_Click);
             // 
             // 学生進捗一覧
             // 
