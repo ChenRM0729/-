@@ -10,6 +10,7 @@ namespace HL_塾管理
 {
     public partial class 学生評価 : DockContent
     {
+        //
         //データベース接続情報
         private string connectionString = ComClass.connectionString;
         //画面項目
