@@ -35,6 +35,7 @@ namespace HL_塾管理
 
         public IntPtr m_教室マスタ登録Handle = IntPtr.Zero;
         public IntPtr m_歴史クラス一覧Handle = IntPtr.Zero;
+        public IntPtr m_歴史教師一覧Handle = IntPtr.Zero;
         
         //liu rui add 20200416
         //liu rui add 20200512
