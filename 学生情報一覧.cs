@@ -377,12 +377,12 @@ namespace HL_塾管理
         {
             code_学生コード = gv_studentsInfo.CurrentRow.Cells["学生コード"].Value.ToString();
             code_クラスコード= gv_studentsInfo.CurrentRow.Cells["クラスコード"].Value.ToString();
-            if (((Form1)(this.Tag)).codeDic.ContainsKey(code_学生コード))
-            {
-                ((Form1)(this.Tag)).codeDic.TryGetValue(code_学生コード, out key);
-                BringWindowToTop((IntPtr)key);
-                return;
-            }
+            //if (((Form1)(this.Tag)).codeDic.ContainsKey(code_学生コード))
+            //{
+            //    ((Form1)(this.Tag)).codeDic.TryGetValue(code_学生コード, out key);
+            //    BringWindowToTop((IntPtr)key);
+            //    return;
+            //}
 
             学生評価 m_NewForm_学生評価 = new 学生評価();
             m_NewForm_学生評価.code_学生コード = code_学生コード;

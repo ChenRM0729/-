@@ -28,11 +28,19 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.txt_クラス開催期間 = new System.Windows.Forms.Label();
             this.btn_今月評価追加 = new System.Windows.Forms.Button();
             this.cmb_クラス = new System.Windows.Forms.ComboBox();
             this.lbl_クラス = new System.Windows.Forms.Label();
             this.dgv_studentgrade = new System.Windows.Forms.DataGridView();
+            this.lbl_評価月 = new System.Windows.Forms.Label();
+            this.lbl_クラス開催期間 = new System.Windows.Forms.Label();
+            this.dtp_date = new System.Windows.Forms.DateTimePicker();
+            this.statusStrip1 = new System.Windows.Forms.StatusStrip();
+            this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
+            this.toolStripStatusLabel1_count = new System.Windows.Forms.ToolStripStatusLabel();
             this.学生コード = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.学生名 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.宿題完成度 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -42,12 +50,6 @@
             this.担当教師 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.総合評価 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.評価年月 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.lbl_評価月 = new System.Windows.Forms.Label();
-            this.lbl_クラス開催期間 = new System.Windows.Forms.Label();
-            this.dtp_date = new System.Windows.Forms.DateTimePicker();
-            this.statusStrip1 = new System.Windows.Forms.StatusStrip();
-            this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
-            this.toolStripStatusLabel1_count = new System.Windows.Forms.ToolStripStatusLabel();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_studentgrade)).BeginInit();
             this.statusStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -114,57 +116,6 @@
             this.dgv_studentgrade.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_studentgrade_CellEndEdit);
             this.dgv_studentgrade.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_studentgrade_CellValueChanged);
             // 
-            // 学生コード
-            // 
-            this.学生コード.HeaderText = "学生コード";
-            this.学生コード.Name = "学生コード";
-            this.学生コード.ReadOnly = true;
-            // 
-            // 学生名
-            // 
-            this.学生名.HeaderText = "学生名";
-            this.学生名.Name = "学生名";
-            this.学生名.ReadOnly = true;
-            // 
-            // 宿題完成度
-            // 
-            this.宿題完成度.HeaderText = "宿題完成度";
-            this.宿題完成度.Name = "宿題完成度";
-            // 
-            // クラスコード
-            // 
-            this.クラスコード.HeaderText = "クラスコード";
-            this.クラスコード.Name = "クラスコード";
-            this.クラスコード.Visible = false;
-            // 
-            // 出勤数
-            // 
-            this.出勤数.HeaderText = "出勤数";
-            this.出勤数.Name = "出勤数";
-            // 
-            // 授業態度
-            // 
-            this.授業態度.HeaderText = "授業態度";
-            this.授業態度.Name = "授業態度";
-            // 
-            // 担当教師
-            // 
-            this.担当教師.HeaderText = "担当教師";
-            this.担当教師.Name = "担当教師";
-            this.担当教師.ReadOnly = true;
-            this.担当教師.Visible = false;
-            // 
-            // 総合評価
-            // 
-            this.総合評価.HeaderText = "総合評価";
-            this.総合評価.Name = "総合評価";
-            // 
-            // 評価年月
-            // 
-            this.評価年月.HeaderText = "評価年月";
-            this.評価年月.Name = "評価年月";
-            this.評価年月.ReadOnly = true;
-            // 
             // lbl_評価月
             // 
             this.lbl_評価月.AutoSize = true;
@@ -217,6 +168,70 @@
             // 
             this.toolStripStatusLabel1_count.Name = "toolStripStatusLabel1_count";
             this.toolStripStatusLabel1_count.Size = new System.Drawing.Size(0, 17);
+            // 
+            // 学生コード
+            // 
+            this.学生コード.Frozen = true;
+            this.学生コード.HeaderText = "学生コード";
+            this.学生コード.Name = "学生コード";
+            this.学生コード.ReadOnly = true;
+            // 
+            // 学生名
+            // 
+            this.学生名.Frozen = true;
+            this.学生名.HeaderText = "学生名";
+            this.学生名.Name = "学生名";
+            this.学生名.ReadOnly = true;
+            // 
+            // 宿題完成度
+            // 
+            this.宿題完成度.Frozen = true;
+            this.宿題完成度.HeaderText = "宿題完成度";
+            this.宿題完成度.Name = "宿題完成度";
+            this.宿題完成度.ReadOnly = true;
+            // 
+            // クラスコード
+            // 
+            this.クラスコード.Frozen = true;
+            this.クラスコード.HeaderText = "クラスコード";
+            this.クラスコード.Name = "クラスコード";
+            this.クラスコード.ReadOnly = true;
+            this.クラスコード.Visible = false;
+            // 
+            // 出勤数
+            // 
+            this.出勤数.HeaderText = "出勤数";
+            this.出勤数.Name = "出勤数";
+            this.出勤数.ReadOnly = true;
+            // 
+            // 授業態度
+            // 
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.Aqua;
+            this.授業態度.DefaultCellStyle = dataGridViewCellStyle1;
+            this.授業態度.HeaderText = "授業態度";
+            this.授業態度.Name = "授業態度";
+            this.授業態度.Width = 200;
+            // 
+            // 担当教師
+            // 
+            this.担当教師.HeaderText = "担当教師";
+            this.担当教師.Name = "担当教師";
+            this.担当教師.ReadOnly = true;
+            this.担当教師.Visible = false;
+            // 
+            // 総合評価
+            // 
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.Aqua;
+            this.総合評価.DefaultCellStyle = dataGridViewCellStyle2;
+            this.総合評価.HeaderText = "総合評価";
+            this.総合評価.Name = "総合評価";
+            this.総合評価.Width = 200;
+            // 
+            // 評価年月
+            // 
+            this.評価年月.HeaderText = "評価年月";
+            this.評価年月.Name = "評価年月";
+            this.評価年月.ReadOnly = true;
             // 
             // 学生評価
             // 
