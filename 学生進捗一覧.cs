@@ -426,7 +426,7 @@ namespace HL_塾管理
             宿題分配 m_NewForm_宿題分配 = new 宿題分配();
             m_NewForm_宿題分配.Tag = ((Form1)(Tag));
             m_NewForm_宿題分配.Show(((Form1)(Tag)).dockPanel1);
-            ((Form1)(Tag)).m_宿題一覧Handle = m_NewForm_宿題分配.Handle;
+            ((Form1)(Tag)).m_宿題分配Handle = m_NewForm_宿題分配.Handle;
             toolStripStatusLabel2.Text = "";
         }
 
