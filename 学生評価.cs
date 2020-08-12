@@ -402,5 +402,9 @@ namespace HL_塾管理
             isEditing = false;
         }
 
+        private void 学生評価_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            ((Form1)(this.Tag)).m_学生評価Handle = IntPtr.Zero;
+        }
     }
 }

@@ -395,5 +395,13 @@ namespace HL_塾管理
                 }
             }
         }
+        /// <summary>
+        /// 画面閉じ
+        /// </summary>
+        private void 宿題分配_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            ((Form1)(this.Tag)).m_宿題分配Handle = IntPtr.Zero;
+        }
+
     }
 }
