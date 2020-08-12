@@ -326,7 +326,7 @@ namespace HL_塾管理
 
                     if (result == 1)
                     {
-                        ((Form1)(this.Tag)).toolStripStatusLabel2.ForeColor = Color.Red;
+                        ((Form1)(this.Tag)).toolStripStatusLabel2.ForeColor = Color.Green;
                         ((Form1)(this.Tag)).toolStripStatusLabel2.Text = "進捗記録が正常に更新されました。";
                         ((Form1)(this.Tag)).reLoad = false;
                         //this.toolStripStatusLabel2.Text = "";
@@ -365,22 +365,22 @@ namespace HL_塾管理
         }
 
         /// <summary>
-        /// 宿題分配
+        /// 課題分配
         /// </summary>
-        private void 宿題分配ToolStripMenuItem_Click(object sender, EventArgs e)
+        private void 課題分配ToolStripMenuItem_Click(object sender, EventArgs e)
         {
             if (((Form1)(this.Tag)).m_課題分配Handle != IntPtr.Zero)
             {
                 BringWindowToTop(((Form1)(this.Tag)).m_課題分配Handle);
                 return;
             }
-            //宿題分配画面呼び出す
-            課題分配 m_NewForm_宿題分配 = new 課題分配();
-            m_NewForm_宿題分配.OpenedBy = "";
-            m_NewForm_宿題分配.学生名 = this.gv_studentsInfo.CurrentRow.Cells["学生名前"].Value.ToString();
-            m_NewForm_宿題分配.Tag = ((Form1)(Tag));
-            m_NewForm_宿題分配.Show(((Form1)(Tag)).dockPanel1);
-            ((Form1)(Tag)).m_課題分配Handle = m_NewForm_宿題分配.Handle;
+            //課題分配画面呼び出す
+            課題分配 m_NewForm_課題分配 = new 課題分配();
+            m_NewForm_課題分配.OpenedBy = "";
+            m_NewForm_課題分配.学生名 = this.gv_studentsInfo.CurrentRow.Cells["学生名前"].Value.ToString();
+            m_NewForm_課題分配.Tag = ((Form1)(Tag));
+            m_NewForm_課題分配.Show(((Form1)(Tag)).dockPanel1);
+            ((Form1)(Tag)).m_課題分配Handle = m_NewForm_課題分配.Handle;
             toolStripStatusLabel2.Text = "";
         }
 
@@ -422,33 +422,33 @@ namespace HL_塾管理
             ((Form1)(this.Tag)).m_学生進捗一覧Handle = IntPtr.Zero;
         }
 
-        private void btn_クラス宿題分配_Click(object sender, EventArgs e)
+        private void btn_クラス課題分配_Click(object sender, EventArgs e)
         {
             if (((Form1)(this.Tag)).m_課題分配Handle != IntPtr.Zero)
             {
                 BringWindowToTop(((Form1)(this.Tag)).m_課題分配Handle);
                 return;
             }
-            //宿題分配画面呼び出す
-            課題分配 m_NewForm_宿題分配 = new 課題分配();
-            m_NewForm_宿題分配.Tag = ((Form1)(Tag));
-            m_NewForm_宿題分配.Show(((Form1)(Tag)).dockPanel1);
-            ((Form1)(Tag)).m_課題分配Handle = m_NewForm_宿題分配.Handle;
+            //課題分配画面呼び出す
+            課題分配 m_NewForm_課題分配 = new 課題分配();
+            m_NewForm_課題分配.Tag = ((Form1)(Tag));
+            m_NewForm_課題分配.Show(((Form1)(Tag)).dockPanel1);
+            ((Form1)(Tag)).m_課題分配Handle = m_NewForm_課題分配.Handle;
             toolStripStatusLabel2.Text = "";
         }
 
-        private void btn_宿題一覧_Click(object sender, EventArgs e)
+        private void btn_課題一覧_Click(object sender, EventArgs e)
         {
-            if (((Form1)(this.Tag)).m_宿題一覧Handle != IntPtr.Zero)
+            if (((Form1)(this.Tag)).m_課題一覧Handle != IntPtr.Zero)
             {
-                BringWindowToTop(((Form1)(this.Tag)).m_宿題一覧Handle);
+                BringWindowToTop(((Form1)(this.Tag)).m_課題一覧Handle);
                 return;
             }
-            //宿題一覧画面呼び出す
-            宿題一覧 m_NewForm_宿題一覧 = new 宿題一覧();
-            m_NewForm_宿題一覧.Tag = ((Form1)(Tag));
-            m_NewForm_宿題一覧.Show(((Form1)(Tag)).dockPanel1);
-            ((Form1)(Tag)).m_宿題一覧Handle = m_NewForm_宿題一覧.Handle;
+            //課題一覧画面呼び出す
+            課題一覧 m_NewForm_課題一覧 = new 課題一覧();
+            m_NewForm_課題一覧.Tag = ((Form1)(Tag));
+            m_NewForm_課題一覧.Show(((Form1)(Tag)).dockPanel1);
+            ((Form1)(Tag)).m_課題一覧Handle = m_NewForm_課題一覧.Handle;
         }
     }
 }

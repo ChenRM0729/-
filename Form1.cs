@@ -79,7 +79,7 @@ namespace HL_塾管理
 
         //wangqian add 20200804
         public IntPtr m_学生進捗一覧Handle = IntPtr.Zero;
-        public IntPtr m_宿題一覧Handle = IntPtr.Zero;
+        public IntPtr m_課題一覧Handle = IntPtr.Zero;
         //end
         public IntPtr m_学生評価Handle = IntPtr.Zero;
         public IntPtr m_学生評価追加Handle = IntPtr.Zero;
@@ -140,13 +140,13 @@ namespace HL_塾管理
 
         //wangqian add 20200804
         学生進捗一覧 m_NewForm_学生進捗一覧 = new 学生進捗一覧();
-        宿題一覧 m_NewForm_宿題一覧 = new 宿題一覧();
+        課題一覧 m_NewForm_課題一覧 = new 課題一覧();
         //end
         学生評価 m_NewForm_学生評価Handle = new 学生評価();
         学生評価追加 m_NewForm_学生評価追加Handle = new 学生評価追加();
         宿題履歴 m_NewForm_宿題履歴Handle = new 宿題履歴();
-        課題追加 m_NewForm_宿題追加Handle = new 課題追加();
-        課題分配 m_NewForm_宿題分配Handle = new 課題分配();
+        課題追加 m_NewForm_課題追加Handle = new 課題追加();
+        課題分配 m_NewForm_課題分配Handle = new 課題分配();
 
         public Form1()
         {
@@ -797,20 +797,20 @@ namespace HL_塾管理
             toolStripStatusLabel2.Text = "";
         }
         /// <summary>
-        /// 宿題一覧画面を開く
+        /// 課題一覧画面を開く
         /// </summary>
-        private void 宿題一覧ToolStripMenuItem1_Click(object sender, EventArgs e)
+        private void 課題一覧ToolStripMenuItem1_Click(object sender, EventArgs e)
         {
-            if (this.m_宿題一覧Handle != IntPtr.Zero)
+            if (this.m_課題一覧Handle != IntPtr.Zero)
             {
-                BringWindowToTop(this.m_宿題一覧Handle);
+                BringWindowToTop(this.m_課題一覧Handle);
                 return;
             }
 
-            m_NewForm_宿題一覧 = new 宿題一覧();
-            m_NewForm_宿題一覧.Tag = this;
-            m_NewForm_宿題一覧.Show(this.dockPanel1);
-            this.m_宿題一覧Handle = m_NewForm_宿題一覧.Handle;
+            m_NewForm_課題一覧 = new 課題一覧();
+            m_NewForm_課題一覧.Tag = this;
+            m_NewForm_課題一覧.Show(this.dockPanel1);
+            this.m_課題一覧Handle = m_NewForm_課題一覧.Handle;
             toolStripStatusLabel2.Text = "";
         }
         //wangqian add 20200804 end

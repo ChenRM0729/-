@@ -40,15 +40,15 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(学生進捗一覧));
             this.txt_search = new System.Windows.Forms.TextBox();
             this.btn_search = new System.Windows.Forms.Button();
-            this.btn_クラス宿題分配 = new System.Windows.Forms.Button();
+            this.btn_クラス課題分配 = new System.Windows.Forms.Button();
             this.gv_studentsInfo = new System.Windows.Forms.DataGridView();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.宿題分配ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.課題分配ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.宿題履歴ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolStripStatusLabel2 = new System.Windows.Forms.ToolStripStatusLabel();
-            this.btn_宿題一覧 = new System.Windows.Forms.Button();
+            this.btn_課題一覧 = new System.Windows.Forms.Button();
             this.学生番号 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.学生名前 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.クラス = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -83,15 +83,15 @@
             this.btn_search.Text = "検索";
             this.btn_search.UseVisualStyleBackColor = true;
             // 
-            // btn_クラス宿題分配
+            // btn_クラス課題分配
             // 
-            this.btn_クラス宿題分配.Location = new System.Drawing.Point(502, 35);
-            this.btn_クラス宿題分配.Name = "btn_クラス宿題分配";
-            this.btn_クラス宿題分配.Size = new System.Drawing.Size(118, 34);
-            this.btn_クラス宿題分配.TabIndex = 4;
-            this.btn_クラス宿題分配.Text = "クラス課題分配";
-            this.btn_クラス宿題分配.UseVisualStyleBackColor = true;
-            this.btn_クラス宿題分配.Click += new System.EventHandler(this.btn_クラス宿題分配_Click);
+            this.btn_クラス課題分配.Location = new System.Drawing.Point(502, 35);
+            this.btn_クラス課題分配.Name = "btn_クラス課題分配";
+            this.btn_クラス課題分配.Size = new System.Drawing.Size(118, 34);
+            this.btn_クラス課題分配.TabIndex = 4;
+            this.btn_クラス課題分配.Text = "クラス課題分配";
+            this.btn_クラス課題分配.UseVisualStyleBackColor = true;
+            this.btn_クラス課題分配.Click += new System.EventHandler(this.btn_クラス課題分配_Click);
             // 
             // gv_studentsInfo
             // 
@@ -136,16 +136,16 @@
             // 
             this.contextMenuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.宿題分配ToolStripMenuItem,
+            this.課題分配ToolStripMenuItem,
             this.宿題履歴ToolStripMenuItem});
             this.contextMenuStrip1.Name = "contextMenuStrip1";
             this.contextMenuStrip1.Size = new System.Drawing.Size(125, 48);
             // 
-            // 宿題分配ToolStripMenuItem
+            // 課題分配ToolStripMenuItem
             // 
-            this.宿題分配ToolStripMenuItem.Name = "宿題分配ToolStripMenuItem";
-            this.宿題分配ToolStripMenuItem.Size = new System.Drawing.Size(124, 22);
-            this.宿題分配ToolStripMenuItem.Text = "課題分配";
+            this.課題分配ToolStripMenuItem.Name = "課題分配ToolStripMenuItem";
+            this.課題分配ToolStripMenuItem.Size = new System.Drawing.Size(124, 22);
+            this.課題分配ToolStripMenuItem.Text = "課題分配";
             // 
             // 宿題履歴ToolStripMenuItem
             // 
@@ -176,15 +176,15 @@
             this.toolStripStatusLabel2.Name = "toolStripStatusLabel2";
             this.toolStripStatusLabel2.Size = new System.Drawing.Size(0, 17);
             // 
-            // btn_宿題一覧
+            // btn_課題一覧
             // 
-            this.btn_宿題一覧.Location = new System.Drawing.Point(697, 34);
-            this.btn_宿題一覧.Name = "btn_宿題一覧";
-            this.btn_宿題一覧.Size = new System.Drawing.Size(103, 34);
-            this.btn_宿題一覧.TabIndex = 5;
-            this.btn_宿題一覧.Text = "課題一覧";
-            this.btn_宿題一覧.UseVisualStyleBackColor = true;
-            this.btn_宿題一覧.Click += new System.EventHandler(this.btn_宿題一覧_Click);
+            this.btn_課題一覧.Location = new System.Drawing.Point(697, 34);
+            this.btn_課題一覧.Name = "btn_課題一覧";
+            this.btn_課題一覧.Size = new System.Drawing.Size(103, 34);
+            this.btn_課題一覧.TabIndex = 5;
+            this.btn_課題一覧.Text = "課題一覧";
+            this.btn_課題一覧.UseVisualStyleBackColor = true;
+            this.btn_課題一覧.Click += new System.EventHandler(this.btn_課題一覧_Click);
             // 
             // 学生番号
             // 
@@ -272,10 +272,10 @@
             this.AutoScroll = true;
             this.ClientSize = new System.Drawing.Size(957, 552);
             this.ContextMenuStrip = this.contextMenuStrip1;
-            this.Controls.Add(this.btn_宿題一覧);
+            this.Controls.Add(this.btn_課題一覧);
             this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.gv_studentsInfo);
-            this.Controls.Add(this.btn_クラス宿題分配);
+            this.Controls.Add(this.btn_クラス課題分配);
             this.Controls.Add(this.btn_search);
             this.Controls.Add(this.txt_search);
             this.Font = new System.Drawing.Font("MS UI Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
@@ -298,15 +298,15 @@
 
         private System.Windows.Forms.TextBox txt_search;
         private System.Windows.Forms.Button btn_search;
-        private System.Windows.Forms.Button btn_クラス宿題分配;
+        private System.Windows.Forms.Button btn_クラス課題分配;
         public System.Windows.Forms.DataGridView gv_studentsInfo;
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
-        private System.Windows.Forms.ToolStripMenuItem 宿題分配ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem 課題分配ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem 宿題履歴ToolStripMenuItem;
         private System.Windows.Forms.StatusStrip statusStrip1;
         private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel1;
         private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel2;
-        private System.Windows.Forms.Button btn_宿題一覧;
+        private System.Windows.Forms.Button btn_課題一覧;
         private System.Windows.Forms.DataGridViewTextBoxColumn 学生番号;
         private System.Windows.Forms.DataGridViewTextBoxColumn 学生名前;
         private System.Windows.Forms.DataGridViewTextBoxColumn クラス;

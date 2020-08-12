@@ -58,7 +58,7 @@
             this.学生情報一覧ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.新規学生入塾ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.学生進捗一覧ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.宿題一覧ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.課題一覧ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.出勤機ユーザToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.出勤機学生登録ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.出勤機学生一覧ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -174,7 +174,7 @@
             this.学生情報一覧ToolStripMenuItem,
             this.新規学生入塾ToolStripMenuItem,
             this.学生進捗一覧ToolStripMenuItem,
-            this.宿題一覧ToolStripMenuItem});
+            this.課題一覧ToolStripMenuItem});
             this.学生管理ToolStripMenuItem.Name = "学生管理ToolStripMenuItem";
             this.学生管理ToolStripMenuItem.Size = new System.Drawing.Size(81, 24);
             this.学生管理ToolStripMenuItem.Text = "学生管理";
@@ -200,12 +200,12 @@
             this.学生進捗一覧ToolStripMenuItem.Text = "学生進捗一覧";
             this.学生進捗一覧ToolStripMenuItem.Click += new System.EventHandler(this.学生進捗一覧ToolStripMenuItem1_Click);
             // 
-            // 宿題一覧ToolStripMenuItem
+            // 課題一覧ToolStripMenuItem
             // 
-            this.宿題一覧ToolStripMenuItem.Name = "宿題一覧ToolStripMenuItem";
-            this.宿題一覧ToolStripMenuItem.Size = new System.Drawing.Size(181, 26);
-            this.宿題一覧ToolStripMenuItem.Text = "課題一覧";
-            this.宿題一覧ToolStripMenuItem.Click += new System.EventHandler(this.宿題一覧ToolStripMenuItem1_Click);
+            this.課題一覧ToolStripMenuItem.Name = "課題一覧ToolStripMenuItem";
+            this.課題一覧ToolStripMenuItem.Size = new System.Drawing.Size(181, 26);
+            this.課題一覧ToolStripMenuItem.Text = "課題一覧";
+            this.課題一覧ToolStripMenuItem.Click += new System.EventHandler(this.課題一覧ToolStripMenuItem1_Click);
             // 
             // 出勤機ユーザToolStripMenuItem
             // 
@@ -501,7 +501,7 @@
         private System.Windows.Forms.ToolStripMenuItem 教室一覧ToolStripMenuItem;
         public System.Windows.Forms.ToolStripMenuItem 教室登録ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem 学生進捗一覧ToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem 宿題一覧ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem 課題一覧ToolStripMenuItem;
     }
 }
 

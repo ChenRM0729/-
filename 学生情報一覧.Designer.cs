@@ -225,7 +225,7 @@ namespace HL_塾管理
             this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.statusLbl_count,
             this.toolStripStatusLabel1});
-            this.statusStrip1.Location = new System.Drawing.Point(0, 1022);
+            this.statusStrip1.Location = new System.Drawing.Point(0, 1039);
             this.statusStrip1.Name = "statusStrip1";
             this.statusStrip1.Padding = new System.Windows.Forms.Padding(1, 0, 33, 0);
             this.statusStrip1.Size = new System.Drawing.Size(2428, 22);
@@ -616,7 +616,7 @@ namespace HL_塾管理
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.ClientSize = new System.Drawing.Size(1924, 1061);
+            this.ClientSize = new System.Drawing.Size(1924, 1078);
             this.ContextMenuStrip = this.contextMenuStrip1;
             this.Controls.Add(this.gv_studentsInfo);
             this.Controls.Add(this.btn_search);

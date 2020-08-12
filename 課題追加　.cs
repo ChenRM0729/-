@@ -235,7 +235,7 @@ namespace HL_塾管理
                 //追加の場合
                 if (IsNew == "New")
                 {
-                    sqlcom.CommandText = string.Format(@"Insert Into HL_JUKUKANRI_課題マスタ Values ('{0}', '{1}', {2},'{3}') ",
+                    sqlcom.CommandText = string.Format(@"Insert Into HL_JUKUKANRI_課題マスタ Values ('{0}', '{1}', '{2}','{3}') ",
                                                          課題コード, 課題名, 課題内容, 言語);
 
                     result = sqlcom.ExecuteNonQuery();

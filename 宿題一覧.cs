@@ -96,13 +96,13 @@ namespace HL_塾管理
                 while (reader.Read())
                 {
                     if (
-                       (reader["宿題コード"].ToString().IndexOf(this.txt_search.Text) < 0)
+                       (reader["課題コード"].ToString().IndexOf(this.txt_search.Text) < 0)
                        &&
-                       (reader["宿題名"].ToString().IndexOf(this.txt_search.Text) < 0)
+                       (reader["課題名"].ToString().IndexOf(this.txt_search.Text) < 0)
                        &&
                        (reader["言語"].ToString().IndexOf(this.txt_search.Text) < 0)
                        &&
-                       (reader["宿題内容"].ToString().IndexOf(this.txt_search.Text) < 0)
+                       (reader["課題内容"].ToString().IndexOf(this.txt_search.Text) < 0)
                        &&
                        (reader["予定完成時間"].ToString().IndexOf(this.txt_search.Text) < 0)
                        )
@@ -112,10 +112,10 @@ namespace HL_塾管理
 
                     //データ値表示
                     this.gv_homework.Rows.Add();
-                    this.gv_homework.Rows[index].Cells["宿題番号"].Value = reader["課題コード"].ToString();
-                    this.gv_homework.Rows[index].Cells["宿題名"].Value = reader["課題名"].ToString();
+                    this.gv_homework.Rows[index].Cells["課題番号"].Value = reader["課題コード"].ToString();
+                    this.gv_homework.Rows[index].Cells["課題名"].Value = reader["課題名"].ToString();
                     this.gv_homework.Rows[index].Cells["言語"].Value = reader["言語"].ToString();
-                    this.gv_homework.Rows[index].Cells["宿題内容"].Value = reader["課題内容"].ToString();
+                    this.gv_homework.Rows[index].Cells["課題内容"].Value = reader["課題内容"].ToString();
                     this.gv_homework.Rows[index].Cells["予定完成時間"].Value = reader["予定完成時間"].ToString();
                     index++;
                 }
@@ -181,9 +181,9 @@ namespace HL_塾管理
                 this.gv_homework.CurrentCell.Selected = true;
                 
                 //画面値取得
-                string 宿題コード = this.gv_homework.CurrentRow.Cells["宿題番号"].Value.ToString();
-                string 宿題名 = this.gv_homework.CurrentRow.Cells["宿題名"].Value.ToString();
-                string 宿題内容 = this.gv_homework.CurrentRow.Cells["宿題内容"].Value.ToString();
+                string 宿題コード = this.gv_homework.CurrentRow.Cells["課題番号"].Value.ToString();
+                string 宿題名 = this.gv_homework.CurrentRow.Cells["課題名"].Value.ToString();
+                string 宿題内容 = this.gv_homework.CurrentRow.Cells["課題内容"].Value.ToString();
 
                 if (宿題内容.Length > 200)
                 {
