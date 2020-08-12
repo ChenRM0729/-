@@ -187,6 +187,9 @@ namespace HL_塾管理
                         rowIndex++;
                     }
                 }
+                //件数表示
+                this.toolStripStatusLabel1.Text = string.Format("{0}件", dtInfo.Rows.Count);
+                ((Form1)(this.Tag)).reLoad = true;
             }
             catch (Exception ee)
             {
