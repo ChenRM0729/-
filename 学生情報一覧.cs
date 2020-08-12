@@ -499,7 +499,7 @@ namespace HL_塾管理
             {
                 e.Cancel = true;
             }
-            //string code_社員 = this..CurrentRow.Cells["社員コード"].Value.ToString();
+            //string code_社員 = this.gv_studentsInfo.CurrentCell.Cells["社員コード"].Value.ToString();
 
 
         }

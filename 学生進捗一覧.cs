@@ -95,14 +95,14 @@ namespace HL_塾管理
                 return;
             }
 
-            string str_sqlcmd = @"select a.学生コード,c.名前,e.クラス名,d.宿題名,d.宿題コード,a.宿題完成度,a.開始日,a.終了日,d.予定完成時間 " +
+            string str_sqlcmd = @"select a.学生コード,c.名前,e.クラス名,d.課題名,d.課題コード,a.課題完成度,a.開始日,a.終了日,d.予定完成時間 " +
                                 "from HL_JUKUKANRI_学生進捗 AS a " +
                                 "left join HL_JUKUKANRI_学生クラス AS b " +
                                 "on a.学生コード = b.学生コード " +
                                 "left join HL_JUKUKANRI_学生マスタ AS c " +
                                 "on a.学生コード = c.学生コード " +
-                                "left join HL_JUKUKANRI_宿題マスタ AS d " +
-                                "on a.宿題コード = d.宿題コード " +
+                                "left join HL_JUKUKANRI_課題マスタ AS d " +
+                                "on a.課題コード = d.課題コード " +
                                 "left join HL_JUKUKANRI_クラス履歴 AS e " +
                                 "on e.学生コード like '%'+a.学生コード+'%' ";
             if (isFlag == "クラス")
@@ -369,7 +369,19 @@ namespace HL_塾管理
         /// </summary>
         private void 宿題分配ToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            if (((Form1)(this.Tag)).m_宿題分配Handle != IntPtr.Zero)
+            {
+                BringWindowToTop(((Form1)(this.Tag)).m_宿題分配Handle);
+                return;
+            }
+            //宿題分配画面呼び出す
+            宿題分配 m_NewForm_宿題分配 = new 宿題分配();
+            m_NewForm_宿題分配.OpenedBy = "";
+            m_NewForm_宿題分配.学生名 = this.gv_studentsInfo.CurrentRow.Cells["学生名前"].Value.ToString();
+            m_NewForm_宿題分配.Tag = ((Form1)(Tag));
+            m_NewForm_宿題分配.Show(((Form1)(Tag)).dockPanel1);
+            ((Form1)(Tag)).m_宿題一覧Handle = m_NewForm_宿題分配.Handle;
+            toolStripStatusLabel2.Text = "";
         }
 
         /// <summary>
@@ -386,6 +398,7 @@ namespace HL_塾管理
             宿題履歴 m_NewForm_宿題履歴 = new 宿題履歴();
             m_NewForm_宿題履歴.Tag = ((Form1)(this.Tag));
             m_NewForm_宿題履歴.StudentCode = this.gv_studentsInfo.CurrentRow.Cells["学生番号"].Value.ToString();
+            m_NewForm_宿題履歴.StudentName = this.gv_studentsInfo.CurrentRow.Cells["学生名前"].Value.ToString();
             m_NewForm_宿題履歴.Show(((Form1)(this.Tag)).dockPanel1);
             ((Form1)(this.Tag)).m_宿題履歴Handle = m_NewForm_宿題履歴.Handle;
             toolStripStatusLabel2.Text = "";
@@ -411,7 +424,17 @@ namespace HL_塾管理
 
         private void btn_クラス宿題分配_Click(object sender, EventArgs e)
         {
-
+            if (((Form1)(this.Tag)).m_宿題分配Handle != IntPtr.Zero)
+            {
+                BringWindowToTop(((Form1)(this.Tag)).m_宿題分配Handle);
+                return;
+            }
+            //宿題分配画面呼び出す
+            宿題分配 m_NewForm_宿題分配 = new 宿題分配();
+            m_NewForm_宿題分配.Tag = ((Form1)(Tag));
+            m_NewForm_宿題分配.Show(((Form1)(Tag)).dockPanel1);
+            ((Form1)(Tag)).m_宿題分配Handle = m_NewForm_宿題分配.Handle;
+            toolStripStatusLabel2.Text = "";
         }
 
         private void btn_宿題一覧_Click(object sender, EventArgs e)
