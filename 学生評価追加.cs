@@ -25,7 +25,7 @@ namespace HL_塾管理
 
         private void btn_今月評価追加_Click(object sender, EventArgs e)
         {
-            if (Convert.ToInt32(DateTime.Now.ToString("yyyyMM")) <= Convert.ToInt32(dtp_date.Value.ToString("yyyyMM")))
+            if (Convert.ToInt32(DateTime.Now.ToString("yyyyMM")) < Convert.ToInt32(dtp_date.Value.ToString("yyyyMM")))
             {
                 this.toolStripStatusLabel1.ForeColor = Color.Red;
                 this.toolStripStatusLabel1.Text = "未来月の評価は追加できません";
@@ -51,7 +51,7 @@ namespace HL_塾管理
                 string str_sqlcmd = "SELECT"
                 + " * "
                 + " FROM "
-                + " 学生評価  "
+                + " HL_JUKUKANRI_学生評価  "
                 + " WHERE  学生コード='" + cmb_学生名.SelectedValue+ "'"
                 + " AND    評価年月='" + dtp_date.Value.ToString("yyyy年MM月") + "'";
 
@@ -114,7 +114,7 @@ namespace HL_塾管理
             }
             catch(Exception ee)
             {
-                ((Form1)(this.Tag)).toolStripStatusLabel2.ForeColor = Color.Green;
+                ((Form1)(this.Tag)).toolStripStatusLabel2.ForeColor = Color.Red;
                 ((Form1)(this.Tag)).toolStripStatusLabel2.Text = ee.ToString();
             }
             finally

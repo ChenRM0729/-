@@ -479,10 +479,9 @@ namespace HL_塾管理
             //教室コード取得
             codeClass = rowMergeView1.CurrentRow.Cells["クラスコード"].Value.ToString();
             //複数画面チェック
-            if (((Form1)(Tag)).codeDic.ContainsKey(codeClass))
+            if (((Form1)(this.Tag)).m_学生評価Handle != IntPtr.Zero)
             {
-                ((Form1)(Tag)).codeDic.TryGetValue(codeClass, out key);
-                BringWindowToTop((IntPtr)key);
+                BringWindowToTop(((Form1)(this.Tag)).m_学生評価Handle);
                 return;
             }
 

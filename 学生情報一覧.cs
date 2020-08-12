@@ -504,6 +504,10 @@ namespace HL_塾管理
             {
                 学生評価toolStripMenuItem.Enabled = false;
             }
+            else
+            {
+                学生評価toolStripMenuItem.Enabled = true;
+            }
 
 
         }

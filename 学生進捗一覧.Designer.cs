@@ -36,21 +36,12 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(学生進捗一覧));
             this.txt_search = new System.Windows.Forms.TextBox();
             this.btn_search = new System.Windows.Forms.Button();
             this.btn_クラス宿題分配 = new System.Windows.Forms.Button();
             this.gv_studentsInfo = new System.Windows.Forms.DataGridView();
-            this.学生番号 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.学生名前 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.クラス = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.使用言語 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.宿題名 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.宿題コード = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.完成度 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.開始日 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.予定完成時間 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.終了日 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.宿題分配ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.宿題履歴ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -58,6 +49,16 @@
             this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolStripStatusLabel2 = new System.Windows.Forms.ToolStripStatusLabel();
             this.btn_宿題一覧 = new System.Windows.Forms.Button();
+            this.学生番号 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.学生名前 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.クラス = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.使用言語 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.課題名 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.課題コード = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.完成度 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.開始日 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.予定完成時間 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.終了日 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.gv_studentsInfo)).BeginInit();
             this.contextMenuStrip1.SuspendLayout();
             this.statusStrip1.SuspendLayout();
@@ -69,7 +70,7 @@
             this.txt_search.Location = new System.Drawing.Point(28, 35);
             this.txt_search.Margin = new System.Windows.Forms.Padding(4);
             this.txt_search.Name = "txt_search";
-            this.txt_search.Size = new System.Drawing.Size(265, 36);
+            this.txt_search.Size = new System.Drawing.Size(265, 30);
             this.txt_search.TabIndex = 2;
             this.txt_search.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
@@ -100,7 +101,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("MS UI Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("MS UI Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
             dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
@@ -112,8 +113,8 @@
             this.学生名前,
             this.クラス,
             this.使用言語,
-            this.宿題名,
-            this.宿題コード,
+            this.課題名,
+            this.課題コード,
             this.完成度,
             this.開始日,
             this.予定完成時間,
@@ -131,84 +132,6 @@
             this.gv_studentsInfo.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.gv_studentsInfo_CellValueChanged);
             this.gv_studentsInfo.DataError += new System.Windows.Forms.DataGridViewDataErrorEventHandler(this.gv_studentsInfo_DataError);
             // 
-            // 学生番号
-            // 
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            this.学生番号.DefaultCellStyle = dataGridViewCellStyle2;
-            this.学生番号.HeaderText = "学生番号";
-            this.学生番号.Name = "学生番号";
-            this.学生番号.ReadOnly = true;
-            // 
-            // 学生名前
-            // 
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            this.学生名前.DefaultCellStyle = dataGridViewCellStyle3;
-            this.学生名前.HeaderText = "学生名前";
-            this.学生名前.Name = "学生名前";
-            this.学生名前.ReadOnly = true;
-            // 
-            // クラス
-            // 
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            this.クラス.DefaultCellStyle = dataGridViewCellStyle4;
-            this.クラス.HeaderText = "クラス";
-            this.クラス.Name = "クラス";
-            this.クラス.ReadOnly = true;
-            // 
-            // 使用言語
-            // 
-            this.使用言語.HeaderText = "使用言語";
-            this.使用言語.Name = "使用言語";
-            this.使用言語.Visible = false;
-            // 
-            // 宿題名
-            // 
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            this.宿題名.DefaultCellStyle = dataGridViewCellStyle5;
-            this.宿題名.HeaderText = "課題";
-            this.宿題名.Name = "宿題名";
-            this.宿題名.ReadOnly = true;
-            // 
-            // 宿題コード
-            // 
-            this.宿題コード.HeaderText = "宿題コード";
-            this.宿題コード.Name = "宿題コード";
-            this.宿題コード.Visible = false;
-            // 
-            // 完成度
-            // 
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.Blue;
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.Blue;
-            this.完成度.DefaultCellStyle = dataGridViewCellStyle6;
-            this.完成度.HeaderText = "完成度(%)";
-            this.完成度.Name = "完成度";
-            // 
-            // 開始日
-            // 
-            this.開始日.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            this.開始日.DefaultCellStyle = dataGridViewCellStyle7;
-            this.開始日.HeaderText = "開始日";
-            this.開始日.Name = "開始日";
-            this.開始日.ReadOnly = true;
-            this.開始日.Width = 180;
-            // 
-            // 予定完成時間
-            // 
-            this.予定完成時間.DefaultCellStyle = dataGridViewCellStyle7;
-            this.予定完成時間.HeaderText = "予定完成時間";
-            this.予定完成時間.Name = "予定完成時間";
-            this.予定完成時間.Width = 130;
-            // 
-            // 終了日
-            // 
-            this.終了日.HeaderText = "終了日";
-            this.終了日.Name = "終了日";
-            this.終了日.Visible = false;
-            // 
             // contextMenuStrip1
             // 
             this.contextMenuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
@@ -216,18 +139,18 @@
             this.宿題分配ToolStripMenuItem,
             this.宿題履歴ToolStripMenuItem});
             this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(176, 80);
+            this.contextMenuStrip1.Size = new System.Drawing.Size(125, 48);
             // 
             // 宿題分配ToolStripMenuItem
             // 
             this.宿題分配ToolStripMenuItem.Name = "宿題分配ToolStripMenuItem";
-            this.宿題分配ToolStripMenuItem.Size = new System.Drawing.Size(175, 24);
+            this.宿題分配ToolStripMenuItem.Size = new System.Drawing.Size(124, 22);
             this.宿題分配ToolStripMenuItem.Text = "課題分配";
             // 
             // 宿題履歴ToolStripMenuItem
             // 
             this.宿題履歴ToolStripMenuItem.Name = "宿題履歴ToolStripMenuItem";
-            this.宿題履歴ToolStripMenuItem.Size = new System.Drawing.Size(175, 24);
+            this.宿題履歴ToolStripMenuItem.Size = new System.Drawing.Size(124, 22);
             this.宿題履歴ToolStripMenuItem.Text = "課題履歴";
             this.宿題履歴ToolStripMenuItem.Click += new System.EventHandler(this.宿題履歴ToolStripMenuItem_Click);
             // 
@@ -263,9 +186,88 @@
             this.btn_宿題一覧.UseVisualStyleBackColor = true;
             this.btn_宿題一覧.Click += new System.EventHandler(this.btn_宿題一覧_Click);
             // 
+            // 学生番号
+            // 
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            this.学生番号.DefaultCellStyle = dataGridViewCellStyle2;
+            this.学生番号.HeaderText = "学生番号";
+            this.学生番号.Name = "学生番号";
+            this.学生番号.ReadOnly = true;
+            // 
+            // 学生名前
+            // 
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            this.学生名前.DefaultCellStyle = dataGridViewCellStyle3;
+            this.学生名前.HeaderText = "学生名前";
+            this.学生名前.Name = "学生名前";
+            this.学生名前.ReadOnly = true;
+            // 
+            // クラス
+            // 
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            this.クラス.DefaultCellStyle = dataGridViewCellStyle4;
+            this.クラス.HeaderText = "クラス";
+            this.クラス.Name = "クラス";
+            this.クラス.ReadOnly = true;
+            // 
+            // 使用言語
+            // 
+            this.使用言語.HeaderText = "使用言語";
+            this.使用言語.Name = "使用言語";
+            this.使用言語.Visible = false;
+            // 
+            // 課題名
+            // 
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            this.課題名.DefaultCellStyle = dataGridViewCellStyle5;
+            this.課題名.HeaderText = "宿題名";
+            this.課題名.Name = "課題名";
+            this.課題名.ReadOnly = true;
+            // 
+            // 課題コード
+            // 
+            this.課題コード.HeaderText = "課題コード";
+            this.課題コード.Name = "課題コード";
+            this.課題コード.Visible = false;
+            // 
+            // 完成度
+            // 
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.Blue;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.Blue;
+            this.完成度.DefaultCellStyle = dataGridViewCellStyle6;
+            this.完成度.HeaderText = "完成度(%)";
+            this.完成度.Name = "完成度";
+            // 
+            // 開始日
+            // 
+            this.開始日.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            this.開始日.DefaultCellStyle = dataGridViewCellStyle7;
+            this.開始日.HeaderText = "開始日";
+            this.開始日.Name = "開始日";
+            this.開始日.ReadOnly = true;
+            this.開始日.Width = 180;
+            // 
+            // 予定完成時間
+            // 
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            this.予定完成時間.DefaultCellStyle = dataGridViewCellStyle8;
+            this.予定完成時間.HeaderText = "予定完成時間";
+            this.予定完成時間.Name = "予定完成時間";
+            this.予定完成時間.Width = 130;
+            // 
+            // 終了日
+            // 
+            this.終了日.HeaderText = "終了日";
+            this.終了日.Name = "終了日";
+            this.終了日.Visible = false;
+            // 
             // 学生進捗一覧
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
             this.ClientSize = new System.Drawing.Size(957, 552);
@@ -309,8 +311,8 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn 学生名前;
         private System.Windows.Forms.DataGridViewTextBoxColumn クラス;
         private System.Windows.Forms.DataGridViewTextBoxColumn 使用言語;
-        private System.Windows.Forms.DataGridViewTextBoxColumn 宿題名;
-        private System.Windows.Forms.DataGridViewTextBoxColumn 宿題コード;
+        private System.Windows.Forms.DataGridViewTextBoxColumn 課題名;
+        private System.Windows.Forms.DataGridViewTextBoxColumn 課題コード;
         private System.Windows.Forms.DataGridViewTextBoxColumn 完成度;
         private System.Windows.Forms.DataGridViewTextBoxColumn 開始日;
         private System.Windows.Forms.DataGridViewTextBoxColumn 予定完成時間;

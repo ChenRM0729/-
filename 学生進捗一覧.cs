@@ -133,9 +133,9 @@ namespace HL_塾管理
                        &&
                        (reader["クラスコード"].ToString().IndexOf(this.txt_search.Text) < 0)
                        &&
-                       (reader["宿題名"].ToString().IndexOf(this.txt_search.Text) < 0)
+                       (reader["課題名"].ToString().IndexOf(this.txt_search.Text) < 0)
                        &&
-                       (reader["宿題完成度"].ToString().IndexOf(this.txt_search.Text) < 0)
+                       (reader["課題完成度"].ToString().IndexOf(this.txt_search.Text) < 0)
                        &&
                        (reader["開始日"].ToString().Replace('/', '-').IndexOf(this.txt_search.Text) < 0)
                        &&
@@ -150,9 +150,9 @@ namespace HL_塾管理
                     this.gv_studentsInfo.Rows[index].Cells["学生番号"].Value = reader["学生コード"].ToString();
                     this.gv_studentsInfo.Rows[index].Cells["学生名前"].Value = reader["名前"].ToString();
                     this.gv_studentsInfo.Rows[index].Cells["クラス"].Value = reader["クラス名"].ToString();
-                    this.gv_studentsInfo.Rows[index].Cells["宿題名"].Value = reader["宿題名"].ToString();
-                    this.gv_studentsInfo.Rows[index].Cells["宿題コード"].Value = reader["宿題コード"].ToString();
-                    this.gv_studentsInfo.Rows[index].Cells["完成度"].Value = reader["宿題完成度"].ToString();
+                    this.gv_studentsInfo.Rows[index].Cells["課題名"].Value = reader["課題名"].ToString();
+                    this.gv_studentsInfo.Rows[index].Cells["課題コード"].Value = reader["課題コード"].ToString();
+                    this.gv_studentsInfo.Rows[index].Cells["完成度"].Value = reader["課題完成度"].ToString();
                     this.gv_studentsInfo.Rows[index].Cells["開始日"].Value = string.IsNullOrWhiteSpace(reader["開始日"].ToString()) ? "" : ((DateTime)reader["開始日"]).ToString("yyyy-MM-dd");
                     this.gv_studentsInfo.Rows[index].Cells["終了日"].Value = string.IsNullOrWhiteSpace(reader["終了日"].ToString()) ? "" : ((DateTime)reader["終了日"]).ToString("yyyy-MM-dd");
                     this.gv_studentsInfo.Rows[index].Cells["予定完成時間"].Value = reader["予定完成時間"].ToString();
@@ -263,15 +263,15 @@ namespace HL_塾管理
                 //画面値取得
                 string 学生コード = this.gv_studentsInfo.CurrentRow.Cells["学生番号"].Value.ToString();
                 string クラスコード = this.gv_studentsInfo.CurrentRow.Cells["クラス"].Value.ToString(); ;
-                string 宿題名 = this.gv_studentsInfo.CurrentRow.Cells["宿題名"].Value.ToString();
-                string 宿題コード = this.gv_studentsInfo.CurrentRow.Cells["宿題コード"].Value.ToString();
-                string 宿題完成度 = this.gv_studentsInfo.CurrentRow.Cells["完成度"].Value.ToString();
+                string 課題名 = this.gv_studentsInfo.CurrentRow.Cells["課題名"].Value.ToString();
+                string 課題コード = this.gv_studentsInfo.CurrentRow.Cells["課題コード"].Value.ToString();
+                string 課題完成度 = this.gv_studentsInfo.CurrentRow.Cells["完成度"].Value.ToString();
                 string 開始日 = this.gv_studentsInfo.CurrentRow.Cells["開始日"].Value.ToString().Replace('-', '/');
                 string 完成フラグ = "0";
                 int a = 0;
-                if (int.TryParse(宿題完成度, out a) == true && 0 <= Convert.ToInt32(宿題完成度) && Convert.ToInt32(宿題完成度) <= 100) 
+                if (int.TryParse(課題完成度, out a) == true && 0 <= Convert.ToInt32(課題完成度) && Convert.ToInt32(課題完成度) <= 100) 
                 {
-                    if (Convert.ToInt32(宿題完成度) == 100)
+                    if (Convert.ToInt32(課題完成度) == 100)
                     {
                         終了日 = DateTime.Now.Date;
                         完成フラグ = "1";
@@ -313,14 +313,14 @@ namespace HL_塾管理
                 {
                     //更新行う
                     string sql_update = @"Update HL_JUKUKANRI_学生進捗 Set " +
-                                        "宿題完成度 = '{0}'," +
+                                        "課題完成度 = '{0}'," +
                                         "終了日 = '{1}'," +
                                         "完成フラグ = '{2}' " +
                                         "Where  学生コード = '{3}' and 開始日 = '{4}' " +
-                                        "and 宿題コード = '{5}'";
+                                        "and 課題コード = '{5}'";
 
 
-                    sqlcom.CommandText = string.Format(sql_update, 宿題完成度, 終了日, 完成フラグ, 学生コード, 開始日, 宿題コード);
+                    sqlcom.CommandText = string.Format(sql_update, 課題完成度, 終了日, 完成フラグ, 学生コード, 開始日, 課題コード);
 
                     result = sqlcom.ExecuteNonQuery();
 
@@ -380,7 +380,7 @@ namespace HL_塾管理
             m_NewForm_宿題分配.学生名 = this.gv_studentsInfo.CurrentRow.Cells["学生名前"].Value.ToString();
             m_NewForm_宿題分配.Tag = ((Form1)(Tag));
             m_NewForm_宿題分配.Show(((Form1)(Tag)).dockPanel1);
-            ((Form1)(Tag)).m_宿題一覧Handle = m_NewForm_宿題分配.Handle;
+            ((Form1)(Tag)).m_宿題分配Handle = m_NewForm_宿題分配.Handle;
             toolStripStatusLabel2.Text = "";
         }
 
