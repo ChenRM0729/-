@@ -363,7 +363,19 @@ namespace HL_塾管理
         /// </summary>
         private void 宿題分配ToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            if (((Form1)(this.Tag)).m_宿題分配Handle != IntPtr.Zero)
+            {
+                BringWindowToTop(((Form1)(this.Tag)).m_宿題分配Handle);
+                return;
+            }
+            //宿題分配画面呼び出す
+            宿題分配 m_NewForm_宿題分配 = new 宿題分配();
+            m_NewForm_宿題分配.OpenedBy = "";
+            m_NewForm_宿題分配.学生名 = this.gv_studentsInfo.CurrentRow.Cells["学生名前"].Value.ToString();
+            m_NewForm_宿題分配.Tag = ((Form1)(Tag));
+            m_NewForm_宿題分配.Show(((Form1)(Tag)).dockPanel1);
+            ((Form1)(Tag)).m_宿題一覧Handle = m_NewForm_宿題分配.Handle;
+            toolStripStatusLabel2.Text = "";
         }
 
         /// <summary>
@@ -410,12 +422,12 @@ namespace HL_塾管理
                 BringWindowToTop(((Form1)(this.Tag)).m_宿題分配Handle);
                 return;
             }
-
+            //宿題分配画面呼び出す
             宿題分配 m_NewForm_宿題分配 = new 宿題分配();
-            m_NewForm_宿題分配.Tag = ((Form1)(this.Tag));
-            m_NewForm_宿題分配.教師コード = login_教師コード;
-            m_NewForm_宿題分配.ShowDialog();
-            ((Form1)(Tag)).m_宿題分配Handle = m_NewForm_宿題分配.Handle;
+            m_NewForm_宿題分配.Tag = ((Form1)(Tag));
+            m_NewForm_宿題分配.Show(((Form1)(Tag)).dockPanel1);
+            ((Form1)(Tag)).m_宿題一覧Handle = m_NewForm_宿題分配.Handle;
+            toolStripStatusLabel2.Text = "";
         }
 
         private void btn_宿題一覧_Click(object sender, EventArgs e)

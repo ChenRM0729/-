@@ -263,12 +263,32 @@ namespace HL_塾管理
 
         private void btn_宿題追加_Click(object sender, EventArgs e)
         {
-
+            if (((Form1)(this.Tag)).m_宿題追加Handle != IntPtr.Zero)
+            {
+                BringWindowToTop(((Form1)(this.Tag)).m_宿題追加Handle);
+                return;
+            }
+            //宿題追加画面呼び出す
+            宿題追加 m_NewForm_宿題追加 = new 宿題追加();
+            m_NewForm_宿題追加.Tag = ((Form1)(Tag));
+            m_NewForm_宿題追加.Show(((Form1)(Tag)).dockPanel1);
+            ((Form1)(Tag)).m_宿題一覧Handle = m_NewForm_宿題追加.Handle;
+            toolStripStatusLabel2.Text = "";
         }
 
         private void btn_宿題分配_Click(object sender, EventArgs e)
         {
-
+            if (((Form1)(this.Tag)).m_宿題分配Handle != IntPtr.Zero)
+            {
+                BringWindowToTop(((Form1)(this.Tag)).m_宿題分配Handle);
+                return;
+            }
+            //宿題分配画面呼び出す
+            宿題分配 m_NewForm_宿題分配 = new 宿題分配();
+            m_NewForm_宿題分配.Tag = ((Form1)(Tag));
+            m_NewForm_宿題分配.Show(((Form1)(Tag)).dockPanel1);
+            ((Form1)(Tag)).m_宿題一覧Handle = m_NewForm_宿題分配.Handle;
+            toolStripStatusLabel2.Text = "";
         }
         /// <summary>
         /// データがおかしい時
