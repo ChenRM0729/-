@@ -181,11 +181,11 @@ namespace HL_塾管理
                 this.gv_homework.CurrentCell.Selected = true;
                 
                 //画面値取得
-                string 宿題コード = this.gv_homework.CurrentRow.Cells["課題番号"].Value.ToString();
-                string 宿題名 = this.gv_homework.CurrentRow.Cells["課題名"].Value.ToString();
-                string 宿題内容 = this.gv_homework.CurrentRow.Cells["課題内容"].Value.ToString();
+                string 課題コード = this.gv_homework.CurrentRow.Cells["課題番号"].Value.ToString();
+                string 課題名 = this.gv_homework.CurrentRow.Cells["課題名"].Value.ToString();
+                string 課題内容 = this.gv_homework.CurrentRow.Cells["課題内容"].Value.ToString();
 
-                if (宿題内容.Length > 200)
+                if (課題内容.Length > 200)
                 {
                     ((Form1)(this.Tag)).toolStripStatusLabel2.ForeColor = Color.Red;
                     ((Form1)(this.Tag)).toolStripStatusLabel2.Text = "課題内容の長さを200以内にしてください。";
@@ -224,7 +224,7 @@ namespace HL_塾管理
                                         "課題内容 = '{0}' " +
                                         "Where  課題コード = '{1}' and 課題名 = '{2}' ";
 
-                    sqlcom.CommandText = string.Format(sql_update, 宿題内容,宿題コード,宿題名);
+                    sqlcom.CommandText = string.Format(sql_update, 課題内容, 課題コード, 課題名);
 
                     result = sqlcom.ExecuteNonQuery();
 
@@ -269,14 +269,14 @@ namespace HL_塾管理
                 return;
             }
             //宿題追加画面呼び出す
-            課題追加 m_NewForm_宿題追加 = new 課題追加();
-            m_NewForm_宿題追加.Tag = ((Form1)(Tag));
-            m_NewForm_宿題追加.Show(((Form1)(Tag)).dockPanel1);
-            ((Form1)(Tag)).m_課題追加Handle = m_NewForm_宿題追加.Handle;
+            課題追加 m_NewForm_課題追加 = new 課題追加();
+            m_NewForm_課題追加.Tag = ((Form1)(Tag));
+            m_NewForm_課題追加.Show(((Form1)(Tag)).dockPanel1);
+            ((Form1)(Tag)).m_課題追加Handle = m_NewForm_課題追加.Handle;
             toolStripStatusLabel2.Text = "";
         }
 
-        private void btn_宿題分配_Click(object sender, EventArgs e)
+        private void btn_課題分配_Click(object sender, EventArgs e)
         {
             if (((Form1)(this.Tag)).m_課題分配Handle != IntPtr.Zero)
             {
@@ -284,10 +284,10 @@ namespace HL_塾管理
                 return;
             }
             //宿題分配画面呼び出す
-            課題分配 m_NewForm_宿題分配 = new 課題分配();
-            m_NewForm_宿題分配.Tag = ((Form1)(Tag));
-            m_NewForm_宿題分配.Show(((Form1)(Tag)).dockPanel1);
-            ((Form1)(Tag)).m_課題分配Handle = m_NewForm_宿題分配.Handle;
+            課題分配 m_NewForm_課題分配 = new 課題分配();
+            m_NewForm_課題分配.Tag = ((Form1)(Tag));
+            m_NewForm_課題分配.Show(((Form1)(Tag)).dockPanel1);
+            ((Form1)(Tag)).m_課題分配Handle = m_NewForm_課題分配.Handle;
             toolStripStatusLabel2.Text = "";
         }
         /// <summary>
@@ -303,9 +303,9 @@ namespace HL_塾管理
         /// <summary>
         /// 画面閉じ
         /// </summary>
-        private void 宿題一覧_FormClosed(object sender, FormClosedEventArgs e)
+        private void 課題一覧_FormClosed(object sender, FormClosedEventArgs e)
         {
-            ((Form1)(this.Tag)).m_宿題一覧Handle = IntPtr.Zero;
+            ((Form1)(this.Tag)).m_課題一覧Handle = IntPtr.Zero;
         }
     }
 }
