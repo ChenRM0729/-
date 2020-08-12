@@ -418,7 +418,8 @@ namespace HL_塾管理
             //学生進捗一覧画面呼び出す
             学生進捗一覧 m_NewForm_学生進捗一覧 = new 学生進捗一覧();
             //クラスコード取得
-            //m_NewForm_学生進捗一覧.classcode = .CurrentRow.Cells["クラスコード"].Value.ToString();
+            m_NewForm_学生進捗一覧.studentcode = gv_studentsInfo.CurrentRow.Cells["学生コード"].Value.ToString();
+            m_NewForm_学生進捗一覧.isFlag = "学生";
             m_NewForm_学生進捗一覧.Tag = ((Form1)(Tag));
             m_NewForm_学生進捗一覧.Show(((Form1)(Tag)).dockPanel1);
             ((Form1)(Tag)).m_学生進捗一覧Handle = m_NewForm_学生進捗一覧.Handle;
@@ -498,7 +499,9 @@ namespace HL_塾管理
             {
                 e.Cancel = true;
             }
-            
+            //string code_社員 = this..CurrentRow.Cells["社員コード"].Value.ToString();
+
+
         }
 
         /// <summary>

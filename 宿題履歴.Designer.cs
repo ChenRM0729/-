@@ -33,26 +33,30 @@ namespace HL_塾管理
             this.dgv_st = new System.Windows.Forms.DataGridView();
             this.lbl_stcode = new System.Windows.Forms.Label();
             this.lbl_stname = new System.Windows.Forms.Label();
-            this.lbl_件数 = new System.Windows.Forms.Label();
             this.lbl_code = new System.Windows.Forms.Label();
             this.lbl_name = new System.Windows.Forms.Label();
+            this.statusStrip1 = new System.Windows.Forms.StatusStrip();
+            this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
+            this.toolStripStatusLabel2 = new System.Windows.Forms.ToolStripStatusLabel();
+            this.件数toolStripStatusLabel = new System.Windows.Forms.ToolStripStatusLabel();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_st)).BeginInit();
+            this.statusStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // dgv_st
             // 
             this.dgv_st.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgv_st.Location = new System.Drawing.Point(54, 172);
+            this.dgv_st.Location = new System.Drawing.Point(54, 55);
             this.dgv_st.Name = "dgv_st";
             this.dgv_st.RowTemplate.Height = 24;
-            this.dgv_st.Size = new System.Drawing.Size(631, 415);
+            this.dgv_st.Size = new System.Drawing.Size(581, 204);
             this.dgv_st.TabIndex = 4;
             // 
             // lbl_stcode
             // 
             this.lbl_stcode.AutoSize = true;
             this.lbl_stcode.Font = new System.Drawing.Font("MS UI Gothic", 12F);
-            this.lbl_stcode.Location = new System.Drawing.Point(476, 94);
+            this.lbl_stcode.Location = new System.Drawing.Point(302, 22);
             this.lbl_stcode.Name = "lbl_stcode";
             this.lbl_stcode.Size = new System.Drawing.Size(99, 20);
             this.lbl_stcode.TabIndex = 6;
@@ -62,27 +66,17 @@ namespace HL_塾管理
             // 
             this.lbl_stname.AutoSize = true;
             this.lbl_stname.Font = new System.Drawing.Font("MS UI Gothic", 12F);
-            this.lbl_stname.Location = new System.Drawing.Point(104, 94);
+            this.lbl_stname.Location = new System.Drawing.Point(50, 22);
             this.lbl_stname.Name = "lbl_stname";
             this.lbl_stname.Size = new System.Drawing.Size(99, 20);
             this.lbl_stname.TabIndex = 5;
             this.lbl_stname.Text = "学生名前：";
             // 
-            // lbl_件数
-            // 
-            this.lbl_件数.AutoSize = true;
-            this.lbl_件数.Font = new System.Drawing.Font("MS UI Gothic", 12F);
-            this.lbl_件数.Location = new System.Drawing.Point(50, 606);
-            this.lbl_件数.Name = "lbl_件数";
-            this.lbl_件数.Size = new System.Drawing.Size(39, 20);
-            this.lbl_件数.TabIndex = 7;
-            this.lbl_件数.Text = "0件";
-            // 
             // lbl_code
             // 
             this.lbl_code.AutoSize = true;
             this.lbl_code.Font = new System.Drawing.Font("MS UI Gothic", 12F);
-            this.lbl_code.Location = new System.Drawing.Point(581, 94);
+            this.lbl_code.Location = new System.Drawing.Point(407, 22);
             this.lbl_code.Name = "lbl_code";
             this.lbl_code.Size = new System.Drawing.Size(29, 20);
             this.lbl_code.TabIndex = 8;
@@ -92,20 +86,48 @@ namespace HL_塾管理
             // 
             this.lbl_name.AutoSize = true;
             this.lbl_name.Font = new System.Drawing.Font("MS UI Gothic", 12F);
-            this.lbl_name.Location = new System.Drawing.Point(209, 94);
+            this.lbl_name.Location = new System.Drawing.Point(155, 22);
             this.lbl_name.Name = "lbl_name";
             this.lbl_name.Size = new System.Drawing.Size(39, 20);
             this.lbl_name.TabIndex = 9;
             this.lbl_name.Text = "123";
             // 
+            // statusStrip1
+            // 
+            this.statusStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
+            this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripStatusLabel1,
+            this.toolStripStatusLabel2,
+            this.件数toolStripStatusLabel});
+            this.statusStrip1.Location = new System.Drawing.Point(0, 364);
+            this.statusStrip1.Name = "statusStrip1";
+            this.statusStrip1.Size = new System.Drawing.Size(837, 24);
+            this.statusStrip1.TabIndex = 10;
+            this.statusStrip1.Text = "statusStrip1";
+            // 
+            // toolStripStatusLabel1
+            // 
+            this.toolStripStatusLabel1.Name = "toolStripStatusLabel1";
+            this.toolStripStatusLabel1.Size = new System.Drawing.Size(0, 20);
+            // 
+            // toolStripStatusLabel2
+            // 
+            this.toolStripStatusLabel2.Name = "toolStripStatusLabel2";
+            this.toolStripStatusLabel2.Size = new System.Drawing.Size(0, 20);
+            // 
+            // 件数toolStripStatusLabel
+            // 
+            this.件数toolStripStatusLabel.Name = "件数toolStripStatusLabel";
+            this.件数toolStripStatusLabel.Size = new System.Drawing.Size(0, 19);
+            // 
             // 宿題履歴
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1005, 635);
+            this.ClientSize = new System.Drawing.Size(837, 388);
+            this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.lbl_name);
             this.Controls.Add(this.lbl_code);
-            this.Controls.Add(this.lbl_件数);
             this.Controls.Add(this.lbl_stcode);
             this.Controls.Add(this.lbl_stname);
             this.Controls.Add(this.dgv_st);
@@ -114,6 +136,8 @@ namespace HL_塾管理
             this.Text = "宿題履歴";
             this.Load += new System.EventHandler(this.宿題履歴_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgv_st)).EndInit();
+            this.statusStrip1.ResumeLayout(false);
+            this.statusStrip1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -125,8 +149,11 @@ namespace HL_塾管理
         private System.Windows.Forms.Label lbl_stcode;
         private System.Windows.Forms.Label lbl_stname;
         private System.Windows.Forms.ToolStripStatusLabel StatusLabel;
-        private Label lbl_件数;
         private Label lbl_code;
         private Label lbl_name;
+        private StatusStrip statusStrip1;
+        private ToolStripStatusLabel toolStripStatusLabel1;
+        private ToolStripStatusLabel toolStripStatusLabel2;
+        private ToolStripStatusLabel 件数toolStripStatusLabel;
     }
 }

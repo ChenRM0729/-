@@ -524,6 +524,7 @@ namespace HL_塾管理
             学生進捗一覧 m_NewForm_学生進捗一覧 = new 学生進捗一覧();
             //クラスコード取得
             m_NewForm_学生進捗一覧.classcode = rowMergeView1.CurrentRow.Cells["クラスコード"].Value.ToString();
+            m_NewForm_学生進捗一覧.isFlag = "クラス";
             m_NewForm_学生進捗一覧.Tag = ((Form1)(Tag));
             m_NewForm_学生進捗一覧.Show(((Form1)(Tag)).dockPanel1);
             ((Form1)(Tag)).m_学生進捗一覧Handle = m_NewForm_学生進捗一覧.Handle;

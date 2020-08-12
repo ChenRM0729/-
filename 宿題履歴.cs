@@ -51,21 +51,20 @@ namespace HL_塾管理
                 return;
             }
 
-            string sql_cmd =String.Format( @"select a.宿題名,b.クラスコード,a.言語,c.宿題評価,b.開始日,b.終了日 
+            string sql_cmd = String.Format(@"select a.課題名,b.クラスコード,a.言語,b.開始日,b.終了日 ，day(b.終了日-b.開始日)　as '完成日数'
                                from HL_JUKUKANRI_宿題マスタ  a
                                left join HL_JUKUKANRI_学生進捗  b 
-                               on a.宿題コード=b.宿題コード
+                               on a.課題コード=b.課題コード
 　                             left join HL_JUKUKANRI_学生評価  c
                                on  b.学生コード=c.学生コード
-                               where b.学生コード={0}",lbl_code.Text);
-                 
-           
+                               where b.学生コード={0}", lbl_code.Text);
+
             try
             {
                 DataTable dt = new DataTable();
                 dt = GetDatatable(sql_cmd);
                 dgv_st.DataSource = dt;
-                lbl_件数.Text = dt.Rows.Count.ToString()+"件";
+                件数toolStripStatusLabel.Text = dt.Rows.Count.ToString()+"件";
             }
             catch (Exception ex)
             {

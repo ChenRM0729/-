@@ -790,6 +790,7 @@ namespace HL_塾管理
             }
 
             m_NewForm_学生進捗一覧 = new 学生進捗一覧();
+            m_NewForm_学生進捗一覧.isFlag = "教師";
             m_NewForm_学生進捗一覧.Tag = this;
             m_NewForm_学生進捗一覧.Show(this.dockPanel1);
             this.m_学生進捗一覧Handle = m_NewForm_学生進捗一覧.Handle;
