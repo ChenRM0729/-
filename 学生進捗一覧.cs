@@ -391,7 +391,7 @@ namespace HL_塾管理
 
             宿題履歴 m_NewForm_宿題履歴 = new 宿題履歴();
             m_NewForm_宿題履歴.Tag = ((Form1)(this.Tag));
-            m_NewForm_宿題履歴.StudentCode = this.gv_studentsInfo.CurrentRow.Cells["学生番号"].Value.ToString();
+            //m_NewForm_宿題履歴.StudentCode = this.gv_studentsInfo.CurrentRow.Cells["学生番号"].Value.ToString();
             m_NewForm_宿題履歴.Show(((Form1)(this.Tag)).dockPanel1);
             ((Form1)(this.Tag)).m_宿題履歴Handle = m_NewForm_宿題履歴.Handle;
             toolStripStatusLabel2.Text = "";

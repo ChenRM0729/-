@@ -74,6 +74,7 @@ namespace HL_塾管理
             this.修了見込み証明書ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.修了証明書ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.学生評価toolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.進捗一覧toolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.dockPanel1 = new WeifenLuo.WinFormsUI.Docking.DockPanel();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.statusLbl_count = new System.Windows.Forms.ToolStripStatusLabel();
@@ -102,7 +103,6 @@ namespace HL_塾管理
             this.クラスメンバー = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.研修 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.btn_search = new System.Windows.Forms.Button();
-            this.進捗一覧toolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.contextMenuStrip1.SuspendLayout();
             this.statusStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gv_studentsInfo)).BeginInit();
@@ -160,9 +160,9 @@ namespace HL_塾管理
             // 
             // 進捗一覧toolStripMenuItem
             // 
-            this.進捗一覧toolStripMenuItem.Name = "学生評価toolStripMenuItem";
+            this.進捗一覧toolStripMenuItem.Name = "進捗一覧toolStripMenuItem";
             this.進捗一覧toolStripMenuItem.Size = new System.Drawing.Size(172, 22);
-            this.進捗一覧toolStripMenuItem.Text = "学生評価";
+            this.進捗一覧toolStripMenuItem.Text = "進捗一覧";
             this.進捗一覧toolStripMenuItem.Click += new System.EventHandler(this.進捗一覧ToolStripMenuItem_Click);
             // 
             // dockPanel1
@@ -225,7 +225,7 @@ namespace HL_塾管理
             this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.statusLbl_count,
             this.toolStripStatusLabel1});
-            this.statusStrip1.Location = new System.Drawing.Point(0, 1022);
+            this.statusStrip1.Location = new System.Drawing.Point(0, 1039);
             this.statusStrip1.Name = "statusStrip1";
             this.statusStrip1.Padding = new System.Windows.Forms.Padding(1, 0, 33, 0);
             this.statusStrip1.Size = new System.Drawing.Size(2428, 22);
@@ -610,19 +610,13 @@ namespace HL_塾管理
             this.btn_search.UseVisualStyleBackColor = true;
             this.btn_search.Click += new System.EventHandler(this.btn_search_Click);
             // 
-            // 進捗一覧toolStripMenuItem
-            // 
-            this.進捗一覧toolStripMenuItem.Name = "進捗一覧toolStripMenuItem";
-            this.進捗一覧toolStripMenuItem.Size = new System.Drawing.Size(172, 22);
-            this.進捗一覧toolStripMenuItem.Text = "進捗一覧";
-            // 
             // 学生情報一覧
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.ClientSize = new System.Drawing.Size(1924, 1061);
+            this.ClientSize = new System.Drawing.Size(1924, 1078);
             this.ContextMenuStrip = this.contextMenuStrip1;
             this.Controls.Add(this.gv_studentsInfo);
             this.Controls.Add(this.btn_search);
