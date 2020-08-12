@@ -102,6 +102,7 @@ namespace HL_塾管理
             this.クラスメンバー = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.研修 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.btn_search = new System.Windows.Forms.Button();
+            this.進捗一覧toolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.contextMenuStrip1.SuspendLayout();
             this.statusStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gv_studentsInfo)).BeginInit();
@@ -116,9 +117,10 @@ namespace HL_塾管理
             this.退塾ToolStripMenuItem,
             this.修了見込み証明書ToolStripMenuItem,
             this.修了証明書ToolStripMenuItem,
-            this.学生評価toolStripMenuItem});
+            this.学生評価toolStripMenuItem,
+            this.進捗一覧toolStripMenuItem});
             this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(173, 114);
+            this.contextMenuStrip1.Size = new System.Drawing.Size(173, 136);
             this.contextMenuStrip1.Opening += new System.ComponentModel.CancelEventHandler(this.contextMenuStrip1_Opening);
             // 
             // 変更ToolStripMenuItem
@@ -155,6 +157,13 @@ namespace HL_塾管理
             this.学生評価toolStripMenuItem.Size = new System.Drawing.Size(172, 22);
             this.学生評価toolStripMenuItem.Text = "学生評価";
             this.学生評価toolStripMenuItem.Click += new System.EventHandler(this.学生評価ToolStripMenuItem_Click);
+            // 
+            // 進捗一覧toolStripMenuItem
+            // 
+            this.進捗一覧toolStripMenuItem.Name = "学生評価toolStripMenuItem";
+            this.進捗一覧toolStripMenuItem.Size = new System.Drawing.Size(172, 22);
+            this.進捗一覧toolStripMenuItem.Text = "学生評価";
+            this.進捗一覧toolStripMenuItem.Click += new System.EventHandler(this.進捗一覧ToolStripMenuItem_Click);
             // 
             // dockPanel1
             // 
@@ -601,6 +610,12 @@ namespace HL_塾管理
             this.btn_search.UseVisualStyleBackColor = true;
             this.btn_search.Click += new System.EventHandler(this.btn_search_Click);
             // 
+            // 進捗一覧toolStripMenuItem
+            // 
+            this.進捗一覧toolStripMenuItem.Name = "進捗一覧toolStripMenuItem";
+            this.進捗一覧toolStripMenuItem.Size = new System.Drawing.Size(172, 22);
+            this.進捗一覧toolStripMenuItem.Text = "進捗一覧";
+            // 
             // 学生情報一覧
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -668,5 +683,6 @@ namespace HL_塾管理
         private DataGridViewTextBoxColumn クラスメンバー;
         private DataGridViewCheckBoxColumn 研修;
         private ToolStripMenuItem 学生評価toolStripMenuItem;
+        private ToolStripMenuItem 進捗一覧toolStripMenuItem;
     }
 }

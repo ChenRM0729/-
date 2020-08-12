@@ -45,6 +45,8 @@ namespace HL_塾管理
         public IntPtr m_教師情報一覧Handle = IntPtr.Zero;
         public IntPtr m_社員から教師へ登録Handle = IntPtr.Zero;
         public IntPtr m_社員から教師へ変更Handle = IntPtr.Zero;
+        public IntPtr m_宿題分配Handle = IntPtr.Zero;
+        
         //end
 
         //liuxiaoyan add 20200420

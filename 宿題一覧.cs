@@ -19,8 +19,8 @@ namespace HL_塾管理
         private AutoSizeFormClass asc = new AutoSizeFormClass();
 
         //データベース接続情報
-        //private string connectionString = ComClass.connectionString;
-        private string connectionString = "Integrated Security=True; Server=WANGQIAN\\MSSQLSERVER01; Database=test; Connection Timeout=60";
+        private string connectionString = ComClass.connectionString;
+
 
         //セル編集フラグ
         private bool isEditing = false;

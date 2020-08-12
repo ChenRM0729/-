@@ -405,7 +405,17 @@ namespace HL_塾管理
 
         private void btn_クラス宿題分配_Click(object sender, EventArgs e)
         {
+            if (((Form1)(this.Tag)).m_宿題分配Handle != IntPtr.Zero)
+            {
+                BringWindowToTop(((Form1)(this.Tag)).m_宿題分配Handle);
+                return;
+            }
 
+            宿題分配 m_NewForm_宿題分配 = new 宿題分配();
+            m_NewForm_宿題分配.Tag = ((Form1)(this.Tag));
+            m_NewForm_宿題分配.教師コード = login_教師コード;
+            m_NewForm_宿題分配.ShowDialog();
+            ((Form1)(Tag)).m_宿題分配Handle = m_NewForm_宿題分配.Handle;
         }
 
         private void btn_宿題一覧_Click(object sender, EventArgs e)
@@ -421,5 +431,7 @@ namespace HL_塾管理
             m_NewForm_宿題一覧.Show(((Form1)(Tag)).dockPanel1);
             ((Form1)(Tag)).m_宿題一覧Handle = m_NewForm_宿題一覧.Handle;
         }
+    
     }
+
 }

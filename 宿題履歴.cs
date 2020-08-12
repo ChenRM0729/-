@@ -17,6 +17,7 @@ namespace HL_塾管理
         //DB接続情報
         private string connectionString = ComClass.connectionString;
 
+
         public string StudentCode = "";
      
         public string StudentName = "";

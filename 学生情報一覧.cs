@@ -400,6 +400,29 @@ namespace HL_塾管理
         }
         //add chen 2020/08/07
 
+        /// <summary>
+        /// 右メニューの進捗一覧メニュー
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void 進捗一覧ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ((Form1)(this.Tag)).toolStripStatusLabel2.Text = "";
+            //複数画面チェック
+            if (((Form1)(this.Tag)).m_学生進捗一覧Handle != IntPtr.Zero)
+            {
+                BringWindowToTop(((Form1)(this.Tag)).m_学生進捗一覧Handle);
+                return;
+            }
+
+            //学生進捗一覧画面呼び出す
+            学生進捗一覧 m_NewForm_学生進捗一覧 = new 学生進捗一覧();
+            //クラスコード取得
+            //m_NewForm_学生進捗一覧.classcode = .CurrentRow.Cells["クラスコード"].Value.ToString();
+            m_NewForm_学生進捗一覧.Tag = ((Form1)(Tag));
+            m_NewForm_学生進捗一覧.Show(((Form1)(Tag)).dockPanel1);
+            ((Form1)(Tag)).m_学生進捗一覧Handle = m_NewForm_学生進捗一覧.Handle;
+        }
 
         /// <summary>
         ///  一覧から選択行を退塾処理
@@ -475,6 +498,7 @@ namespace HL_塾管理
             {
                 e.Cancel = true;
             }
+            
         }
 
         /// <summary>
