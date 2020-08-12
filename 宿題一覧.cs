@@ -85,8 +85,8 @@ namespace HL_塾管理
                 return;
             }
 
-            string str_sqlcmd = @"select 宿題コード,宿題名,言語,宿題内容,予定完成時間 " +
-                                 "from HL_JUKUKANRI_宿題マスタ ";
+            string str_sqlcmd = @"select 課題コード,課題名,言語,課題内容,予定完成時間 " +
+                                 "from HL_JUKUKANRI_課題マスタ ";
 
             SqlCommand com = new SqlCommand(str_sqlcmd, sqlcon);
             SqlDataReader reader = com.ExecuteReader();
@@ -112,10 +112,10 @@ namespace HL_塾管理
 
                     //データ値表示
                     this.gv_homework.Rows.Add();
-                    this.gv_homework.Rows[index].Cells["宿題番号"].Value = reader["宿題コード"].ToString();
-                    this.gv_homework.Rows[index].Cells["宿題名"].Value = reader["宿題名"].ToString();
+                    this.gv_homework.Rows[index].Cells["宿題番号"].Value = reader["課題コード"].ToString();
+                    this.gv_homework.Rows[index].Cells["宿題名"].Value = reader["課題名"].ToString();
                     this.gv_homework.Rows[index].Cells["言語"].Value = reader["言語"].ToString();
-                    this.gv_homework.Rows[index].Cells["宿題内容"].Value = reader["宿題内容"].ToString();
+                    this.gv_homework.Rows[index].Cells["宿題内容"].Value = reader["課題内容"].ToString();
                     this.gv_homework.Rows[index].Cells["予定完成時間"].Value = reader["予定完成時間"].ToString();
                     index++;
                 }
@@ -220,9 +220,9 @@ namespace HL_塾管理
                 try
                 {
                     //更新行う
-                    string sql_update = @"Update HL_JUKUKANRI_宿題マスタ Set " +
-                                        "宿題内容 = '{0}' " +
-                                        "Where  宿題コード = '{1}' and 宿題名 = '{2}' ";
+                    string sql_update = @"Update HL_JUKUKANRI_課題マスタ Set " +
+                                        "課題内容 = '{0}' " +
+                                        "Where  課題コード = '{1}' and 課題名 = '{2}' ";
 
                     sqlcom.CommandText = string.Format(sql_update, 宿題内容,宿題コード,宿題名);
 
@@ -263,31 +263,31 @@ namespace HL_塾管理
 
         private void btn_宿題追加_Click(object sender, EventArgs e)
         {
-            if (((Form1)(this.Tag)).m_宿題追加Handle != IntPtr.Zero)
+            if (((Form1)(this.Tag)).m_課題追加Handle != IntPtr.Zero)
             {
-                BringWindowToTop(((Form1)(this.Tag)).m_宿題追加Handle);
+                BringWindowToTop(((Form1)(this.Tag)).m_課題追加Handle);
                 return;
             }
             //宿題追加画面呼び出す
-            宿題追加 m_NewForm_宿題追加 = new 宿題追加();
+            課題追加 m_NewForm_宿題追加 = new 課題追加();
             m_NewForm_宿題追加.Tag = ((Form1)(Tag));
             m_NewForm_宿題追加.Show(((Form1)(Tag)).dockPanel1);
-            ((Form1)(Tag)).m_宿題一覧Handle = m_NewForm_宿題追加.Handle;
+            ((Form1)(Tag)).m_課題追加Handle = m_NewForm_宿題追加.Handle;
             toolStripStatusLabel2.Text = "";
         }
 
         private void btn_宿題分配_Click(object sender, EventArgs e)
         {
-            if (((Form1)(this.Tag)).m_宿題分配Handle != IntPtr.Zero)
+            if (((Form1)(this.Tag)).m_課題分配Handle != IntPtr.Zero)
             {
-                BringWindowToTop(((Form1)(this.Tag)).m_宿題分配Handle);
+                BringWindowToTop(((Form1)(this.Tag)).m_課題分配Handle);
                 return;
             }
             //宿題分配画面呼び出す
-            宿題分配 m_NewForm_宿題分配 = new 宿題分配();
+            課題分配 m_NewForm_宿題分配 = new 課題分配();
             m_NewForm_宿題分配.Tag = ((Form1)(Tag));
             m_NewForm_宿題分配.Show(((Form1)(Tag)).dockPanel1);
-            ((Form1)(Tag)).m_宿題一覧Handle = m_NewForm_宿題分配.Handle;
+            ((Form1)(Tag)).m_課題分配Handle = m_NewForm_宿題分配.Handle;
             toolStripStatusLabel2.Text = "";
         }
         /// <summary>

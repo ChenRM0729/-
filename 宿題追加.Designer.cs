@@ -1,6 +1,6 @@
 ﻿namespace HL_塾管理
 {
-    partial class 宿題追加
+    partial class 課題追加
     {
         /// <summary>
         /// Required designer variable.
@@ -28,26 +28,26 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.lbl_宿題名 = new System.Windows.Forms.Label();
+            this.lbl_課題名 = new System.Windows.Forms.Label();
             this.lbl_言語 = new System.Windows.Forms.Label();
-            this.lbl_宿題内容 = new System.Windows.Forms.Label();
+            this.lbl_課題内容 = new System.Windows.Forms.Label();
             this.cmb_言語 = new System.Windows.Forms.ComboBox();
-            this.txt_宿題名 = new System.Windows.Forms.TextBox();
-            this.txt_宿題内容 = new System.Windows.Forms.TextBox();
+            this.txt_課題名 = new System.Windows.Forms.TextBox();
+            this.txt_課題内容 = new System.Windows.Forms.TextBox();
             this.btn_追加 = new System.Windows.Forms.Button();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
             this.statusStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
-            // lbl_宿題名
+            // lbl_課題名
             // 
-            this.lbl_宿題名.AutoSize = true;
-            this.lbl_宿題名.Location = new System.Drawing.Point(61, 44);
-            this.lbl_宿題名.Name = "lbl_宿題名";
-            this.lbl_宿題名.Size = new System.Drawing.Size(41, 12);
-            this.lbl_宿題名.TabIndex = 2;
-            this.lbl_宿題名.Text = "課題名";
+            this.lbl_課題名.AutoSize = true;
+            this.lbl_課題名.Location = new System.Drawing.Point(61, 44);
+            this.lbl_課題名.Name = "lbl_課題名";
+            this.lbl_課題名.Size = new System.Drawing.Size(41, 12);
+            this.lbl_課題名.TabIndex = 2;
+            this.lbl_課題名.Text = "課題名";
             // 
             // lbl_言語
             // 
@@ -58,14 +58,14 @@
             this.lbl_言語.TabIndex = 3;
             this.lbl_言語.Text = "言語";
             // 
-            // lbl_宿題内容
+            // lbl_課題内容
             // 
-            this.lbl_宿題内容.AutoSize = true;
-            this.lbl_宿題内容.Location = new System.Drawing.Point(61, 162);
-            this.lbl_宿題内容.Name = "lbl_宿題内容";
-            this.lbl_宿題内容.Size = new System.Drawing.Size(53, 12);
-            this.lbl_宿題内容.TabIndex = 4;
-            this.lbl_宿題内容.Text = "課題内容";
+            this.lbl_課題内容.AutoSize = true;
+            this.lbl_課題内容.Location = new System.Drawing.Point(61, 162);
+            this.lbl_課題内容.Name = "lbl_課題内容";
+            this.lbl_課題内容.Size = new System.Drawing.Size(53, 12);
+            this.lbl_課題内容.TabIndex = 4;
+            this.lbl_課題内容.Text = "課題内容";
             // 
             // cmb_言語
             // 
@@ -85,22 +85,22 @@
             this.cmb_言語.TabIndex = 2;
             this.cmb_言語.SelectedValueChanged += new System.EventHandler(this.cmb_言語_SelectedValueChanged);
             // 
-            // txt_宿題名
+            // txt_課題名
             // 
-            this.txt_宿題名.Location = new System.Drawing.Point(158, 41);
-            this.txt_宿題名.MaxLength = 100;
-            this.txt_宿題名.Name = "txt_宿題名";
-            this.txt_宿題名.Size = new System.Drawing.Size(153, 21);
-            this.txt_宿題名.TabIndex = 1;
+            this.txt_課題名.Location = new System.Drawing.Point(158, 41);
+            this.txt_課題名.MaxLength = 100;
+            this.txt_課題名.Name = "txt_課題名";
+            this.txt_課題名.Size = new System.Drawing.Size(153, 21);
+            this.txt_課題名.TabIndex = 1;
             // 
-            // txt_宿題内容
+            // txt_課題内容
             // 
-            this.txt_宿題内容.Location = new System.Drawing.Point(63, 190);
-            this.txt_宿題内容.MaxLength = 200;
-            this.txt_宿題内容.Multiline = true;
-            this.txt_宿題内容.Name = "txt_宿題内容";
-            this.txt_宿題内容.Size = new System.Drawing.Size(670, 155);
-            this.txt_宿題内容.TabIndex = 3;
+            this.txt_課題内容.Location = new System.Drawing.Point(63, 190);
+            this.txt_課題内容.MaxLength = 200;
+            this.txt_課題内容.Multiline = true;
+            this.txt_課題内容.Name = "txt_課題内容";
+            this.txt_課題内容.Size = new System.Drawing.Size(670, 155);
+            this.txt_課題内容.TabIndex = 3;
             // 
             // btn_追加
             // 
@@ -127,22 +127,24 @@
             this.toolStripStatusLabel1.Name = "toolStripStatusLabel1";
             this.toolStripStatusLabel1.Size = new System.Drawing.Size(0, 17);
             // 
-            // 宿題追加
+            // 課題追加
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.btn_追加);
-            this.Controls.Add(this.txt_宿題内容);
-            this.Controls.Add(this.txt_宿題名);
+            this.Controls.Add(this.txt_課題内容);
+            this.Controls.Add(this.txt_課題名);
             this.Controls.Add(this.cmb_言語);
-            this.Controls.Add(this.lbl_宿題内容);
+            this.Controls.Add(this.lbl_課題内容);
             this.Controls.Add(this.lbl_言語);
-            this.Controls.Add(this.lbl_宿題名);
-            this.Name = "宿題追加";
+            this.Controls.Add(this.lbl_課題名);
+            this.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.Name = "課題追加";
             this.Text = "課題追加";
-            this.Load += new System.EventHandler(this.宿題追加_Load);
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.課題追加_FormClosed);
+            this.Load += new System.EventHandler(this.課題追加_Load);
             this.statusStrip1.ResumeLayout(false);
             this.statusStrip1.PerformLayout();
             this.ResumeLayout(false);
@@ -151,12 +153,12 @@
         }
 
         #endregion
-        private System.Windows.Forms.Label lbl_宿題名;
+        private System.Windows.Forms.Label lbl_課題名;
         private System.Windows.Forms.Label lbl_言語;
-        private System.Windows.Forms.Label lbl_宿題内容;
+        private System.Windows.Forms.Label lbl_課題内容;
         private System.Windows.Forms.ComboBox cmb_言語;
-        private System.Windows.Forms.TextBox txt_宿題名;
-        private System.Windows.Forms.TextBox txt_宿題内容;
+        private System.Windows.Forms.TextBox txt_課題名;
+        private System.Windows.Forms.TextBox txt_課題内容;
         private System.Windows.Forms.Button btn_追加;
         private System.Windows.Forms.StatusStrip statusStrip1;
         private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel1;

@@ -369,18 +369,18 @@ namespace HL_塾管理
         /// </summary>
         private void 宿題分配ToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            if (((Form1)(this.Tag)).m_宿題分配Handle != IntPtr.Zero)
+            if (((Form1)(this.Tag)).m_課題分配Handle != IntPtr.Zero)
             {
-                BringWindowToTop(((Form1)(this.Tag)).m_宿題分配Handle);
+                BringWindowToTop(((Form1)(this.Tag)).m_課題分配Handle);
                 return;
             }
             //宿題分配画面呼び出す
-            宿題分配 m_NewForm_宿題分配 = new 宿題分配();
+            課題分配 m_NewForm_宿題分配 = new 課題分配();
             m_NewForm_宿題分配.OpenedBy = "";
             m_NewForm_宿題分配.学生名 = this.gv_studentsInfo.CurrentRow.Cells["学生名前"].Value.ToString();
             m_NewForm_宿題分配.Tag = ((Form1)(Tag));
             m_NewForm_宿題分配.Show(((Form1)(Tag)).dockPanel1);
-            ((Form1)(Tag)).m_宿題分配Handle = m_NewForm_宿題分配.Handle;
+            ((Form1)(Tag)).m_課題分配Handle = m_NewForm_宿題分配.Handle;
             toolStripStatusLabel2.Text = "";
         }
 
@@ -424,16 +424,16 @@ namespace HL_塾管理
 
         private void btn_クラス宿題分配_Click(object sender, EventArgs e)
         {
-            if (((Form1)(this.Tag)).m_宿題分配Handle != IntPtr.Zero)
+            if (((Form1)(this.Tag)).m_課題分配Handle != IntPtr.Zero)
             {
-                BringWindowToTop(((Form1)(this.Tag)).m_宿題分配Handle);
+                BringWindowToTop(((Form1)(this.Tag)).m_課題分配Handle);
                 return;
             }
             //宿題分配画面呼び出す
-            宿題分配 m_NewForm_宿題分配 = new 宿題分配();
+            課題分配 m_NewForm_宿題分配 = new 課題分配();
             m_NewForm_宿題分配.Tag = ((Form1)(Tag));
             m_NewForm_宿題分配.Show(((Form1)(Tag)).dockPanel1);
-            ((Form1)(Tag)).m_宿題分配Handle = m_NewForm_宿題分配.Handle;
+            ((Form1)(Tag)).m_課題分配Handle = m_NewForm_宿題分配.Handle;
             toolStripStatusLabel2.Text = "";
         }
 

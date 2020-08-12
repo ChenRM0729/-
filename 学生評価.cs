@@ -361,15 +361,15 @@ namespace HL_塾管理
 
                 if (result != 1)
                 {
-                    ((Form1)(this.Tag)).toolStripStatusLabel2.ForeColor = Color.Red;
-                    ((Form1)(this.Tag)).toolStripStatusLabel2.Text = string.Format("学生評価[{0}]の更新処理が失敗しました.", code_学生);
-                    ((Form1)(this.Tag)).reLoad = false;
-                }
-                else
-                {
                     ((Form1)(this.Tag)).toolStripStatusLabel2.ForeColor = Color.Green;
                     ((Form1)(this.Tag)).toolStripStatusLabel2.Text = string.Format("学生評価[{0}]の情報が正常に更新しました.", code_学生);
                     isUpdate = true;
+                }
+                else
+                {
+                    ((Form1)(this.Tag)).toolStripStatusLabel2.ForeColor = Color.Red;
+                    ((Form1)(this.Tag)).toolStripStatusLabel2.Text = string.Format("学生評価[{0}]の更新処理が失敗しました.", code_学生);
+                    ((Form1)(this.Tag)).reLoad = false;
                 }
             }
             catch (Exception ee)

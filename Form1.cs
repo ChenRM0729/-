@@ -45,8 +45,8 @@ namespace HL_塾管理
         public IntPtr m_教師情報一覧Handle = IntPtr.Zero;
         public IntPtr m_社員から教師へ登録Handle = IntPtr.Zero;
         public IntPtr m_社員から教師へ変更Handle = IntPtr.Zero;
-        public IntPtr m_宿題分配Handle = IntPtr.Zero;
-        public IntPtr m_宿題追加Handle = IntPtr.Zero;
+        public IntPtr m_課題分配Handle = IntPtr.Zero;
+        public IntPtr m_課題追加Handle = IntPtr.Zero;
 
         //end
 
@@ -145,8 +145,8 @@ namespace HL_塾管理
         学生評価 m_NewForm_学生評価Handle = new 学生評価();
         学生評価追加 m_NewForm_学生評価追加Handle = new 学生評価追加();
         宿題履歴 m_NewForm_宿題履歴Handle = new 宿題履歴();
-        宿題追加 m_NewForm_宿題追加Handle = new 宿題追加();
-        宿題分配 m_NewForm_宿題分配Handle = new 宿題分配();
+        課題追加 m_NewForm_宿題追加Handle = new 課題追加();
+        課題分配 m_NewForm_宿題分配Handle = new 課題分配();
 
         public Form1()
         {
