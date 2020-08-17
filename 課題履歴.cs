@@ -51,13 +51,11 @@ namespace HL_塾管理
                 return;
             }
 
-            string sql_cmd = String.Format(@"select a.課題名,b.クラスコード,a.言語,b.開始日,b.終了日 ,day(b.終了日-b.開始日)　as '完成日数'
-                               from HL_JUKUKANRI_課題マスタ  a
-                               left join HL_JUKUKANRI_学生進捗  b 
+            string sql_cmd = String.Format(@"select b.課題名,a.クラスコード,b.言語,a.開始日,a.終了日 ,day(a.終了日-a.開始日)　as '完成日数'
+                               from HL_JUKUKANRI_学生進捗  a
+                               left outer join HL_JUKUKANRI_課題マスタ  b 
                                on a.課題コード=b.課題コード
-　                             left join HL_JUKUKANRI_学生評価  c
-                               on  b.学生コード=c.学生コード
-                               where b.学生コード={0}", lbl_code.Text);
+                               where a.学生コード={0}", lbl_code.Text);
 
             try
             {

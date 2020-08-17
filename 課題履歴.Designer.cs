@@ -78,9 +78,8 @@ namespace HL_塾管理
             this.lbl_code.Font = new System.Drawing.Font("MS UI Gothic", 12F);
             this.lbl_code.Location = new System.Drawing.Point(407, 22);
             this.lbl_code.Name = "lbl_code";
-            this.lbl_code.Size = new System.Drawing.Size(29, 20);
+            this.lbl_code.Size = new System.Drawing.Size(0, 20);
             this.lbl_code.TabIndex = 8;
-            this.lbl_code.Text = "01";
             // 
             // lbl_name
             // 
@@ -88,9 +87,8 @@ namespace HL_塾管理
             this.lbl_name.Font = new System.Drawing.Font("MS UI Gothic", 12F);
             this.lbl_name.Location = new System.Drawing.Point(155, 22);
             this.lbl_name.Name = "lbl_name";
-            this.lbl_name.Size = new System.Drawing.Size(39, 20);
+            this.lbl_name.Size = new System.Drawing.Size(0, 20);
             this.lbl_name.TabIndex = 9;
-            this.lbl_name.Text = "123";
             // 
             // statusStrip1
             // 
@@ -99,28 +97,28 @@ namespace HL_塾管理
             this.toolStripStatusLabel1,
             this.toolStripStatusLabel2,
             this.件数toolStripStatusLabel});
-            this.statusStrip1.Location = new System.Drawing.Point(0, 364);
+            this.statusStrip1.Location = new System.Drawing.Point(0, 366);
             this.statusStrip1.Name = "statusStrip1";
-            this.statusStrip1.Size = new System.Drawing.Size(837, 24);
+            this.statusStrip1.Size = new System.Drawing.Size(837, 22);
             this.statusStrip1.TabIndex = 10;
             this.statusStrip1.Text = "statusStrip1";
             // 
             // toolStripStatusLabel1
             // 
             this.toolStripStatusLabel1.Name = "toolStripStatusLabel1";
-            this.toolStripStatusLabel1.Size = new System.Drawing.Size(0, 20);
+            this.toolStripStatusLabel1.Size = new System.Drawing.Size(0, 17);
             // 
             // toolStripStatusLabel2
             // 
             this.toolStripStatusLabel2.Name = "toolStripStatusLabel2";
-            this.toolStripStatusLabel2.Size = new System.Drawing.Size(0, 20);
+            this.toolStripStatusLabel2.Size = new System.Drawing.Size(0, 17);
             // 
             // 件数toolStripStatusLabel
             // 
             this.件数toolStripStatusLabel.Name = "件数toolStripStatusLabel";
-            this.件数toolStripStatusLabel.Size = new System.Drawing.Size(0, 19);
+            this.件数toolStripStatusLabel.Size = new System.Drawing.Size(0, 17);
             // 
-            // 宿題履歴
+            // 課題履歴
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -132,7 +130,7 @@ namespace HL_塾管理
             this.Controls.Add(this.lbl_stname);
             this.Controls.Add(this.dgv_st);
             this.Font = new System.Drawing.Font("MS UI Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.Name = "宿題履歴";
+            this.Name = "課題履歴";
             this.Text = "宿題履歴";
             this.Load += new System.EventHandler(this.宿題履歴_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgv_st)).EndInit();
