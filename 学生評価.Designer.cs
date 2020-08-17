@@ -35,12 +35,6 @@
             this.cmb_クラス = new System.Windows.Forms.ComboBox();
             this.lbl_クラス = new System.Windows.Forms.Label();
             this.dgv_studentgrade = new System.Windows.Forms.DataGridView();
-            this.lbl_評価月 = new System.Windows.Forms.Label();
-            this.lbl_クラス開催期間 = new System.Windows.Forms.Label();
-            this.dtp_date = new System.Windows.Forms.DateTimePicker();
-            this.statusStrip1 = new System.Windows.Forms.StatusStrip();
-            this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
-            this.toolStripStatusLabel1_count = new System.Windows.Forms.ToolStripStatusLabel();
             this.学生コード = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.学生名 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.課題完成度 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -50,6 +44,12 @@
             this.担当教師 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.総合評価 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.評価年月 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.lbl_クラス開催期間 = new System.Windows.Forms.Label();
+            this.statusStrip1 = new System.Windows.Forms.StatusStrip();
+            this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
+            this.toolStripStatusLabel1_count = new System.Windows.Forms.ToolStripStatusLabel();
+            this.txt_searchKey = new System.Windows.Forms.TextBox();
+            this.btn_search = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_studentgrade)).BeginInit();
             this.statusStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -69,7 +69,7 @@
             this.btn_今月評価追加.Name = "btn_今月評価追加";
             this.btn_今月評価追加.Size = new System.Drawing.Size(95, 23);
             this.btn_今月評価追加.TabIndex = 24;
-            this.btn_今月評価追加.Text = "今月評価追加";
+            this.btn_今月評価追加.Text = "月評価追加";
             this.btn_今月評価追加.UseVisualStyleBackColor = true;
             this.btn_今月評価追加.Click += new System.EventHandler(this.btn_今月評価追加_Click);
             // 
@@ -115,59 +115,6 @@
             this.dgv_studentgrade.CellBeginEdit += new System.Windows.Forms.DataGridViewCellCancelEventHandler(this.dgv_studentgrade_CellBeginEdit);
             this.dgv_studentgrade.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_studentgrade_CellEndEdit);
             this.dgv_studentgrade.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_studentgrade_CellValueChanged);
-            // 
-            // lbl_評価月
-            // 
-            this.lbl_評価月.AutoSize = true;
-            this.lbl_評価月.Location = new System.Drawing.Point(631, 29);
-            this.lbl_評価月.Name = "lbl_評価月";
-            this.lbl_評価月.Size = new System.Drawing.Size(41, 12);
-            this.lbl_評価月.TabIndex = 28;
-            this.lbl_評価月.Text = "評価月";
-            // 
-            // lbl_クラス開催期間
-            // 
-            this.lbl_クラス開催期間.AutoSize = true;
-            this.lbl_クラス開催期間.Location = new System.Drawing.Point(222, 29);
-            this.lbl_クラス開催期間.Name = "lbl_クラス開催期間";
-            this.lbl_クラス開催期間.Size = new System.Drawing.Size(89, 12);
-            this.lbl_クラス開催期間.TabIndex = 29;
-            this.lbl_クラス開催期間.Text = "クラス開催期間";
-            // 
-            // dtp_date
-            // 
-            this.dtp_date.CustomFormat = "yyyy年MM月";
-            this.dtp_date.Font = new System.Drawing.Font("MS UI Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.dtp_date.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtp_date.Location = new System.Drawing.Point(694, 24);
-            this.dtp_date.Margin = new System.Windows.Forms.Padding(5);
-            this.dtp_date.Name = "dtp_date";
-            this.dtp_date.ShowUpDown = true;
-            this.dtp_date.Size = new System.Drawing.Size(195, 22);
-            this.dtp_date.TabIndex = 125;
-            this.dtp_date.ValueChanged += new System.EventHandler(this.dtp_date_ValueChanged);
-            // 
-            // statusStrip1
-            // 
-            this.statusStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
-            this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripStatusLabel1,
-            this.toolStripStatusLabel1_count});
-            this.statusStrip1.Location = new System.Drawing.Point(0, 409);
-            this.statusStrip1.Name = "statusStrip1";
-            this.statusStrip1.Size = new System.Drawing.Size(1030, 22);
-            this.statusStrip1.TabIndex = 133;
-            this.statusStrip1.Text = "statusStrip1";
-            // 
-            // toolStripStatusLabel1
-            // 
-            this.toolStripStatusLabel1.Name = "toolStripStatusLabel1";
-            this.toolStripStatusLabel1.Size = new System.Drawing.Size(0, 17);
-            // 
-            // toolStripStatusLabel1_count
-            // 
-            this.toolStripStatusLabel1_count.Name = "toolStripStatusLabel1_count";
-            this.toolStripStatusLabel1_count.Size = new System.Drawing.Size(0, 17);
             // 
             // 学生コード
             // 
@@ -233,15 +180,63 @@
             this.評価年月.Name = "評価年月";
             this.評価年月.ReadOnly = true;
             // 
+            // lbl_クラス開催期間
+            // 
+            this.lbl_クラス開催期間.AutoSize = true;
+            this.lbl_クラス開催期間.Location = new System.Drawing.Point(222, 29);
+            this.lbl_クラス開催期間.Name = "lbl_クラス開催期間";
+            this.lbl_クラス開催期間.Size = new System.Drawing.Size(89, 12);
+            this.lbl_クラス開催期間.TabIndex = 29;
+            this.lbl_クラス開催期間.Text = "クラス開催期間";
+            // 
+            // statusStrip1
+            // 
+            this.statusStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
+            this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripStatusLabel1,
+            this.toolStripStatusLabel1_count});
+            this.statusStrip1.Location = new System.Drawing.Point(0, 409);
+            this.statusStrip1.Name = "statusStrip1";
+            this.statusStrip1.Size = new System.Drawing.Size(1030, 22);
+            this.statusStrip1.TabIndex = 133;
+            this.statusStrip1.Text = "statusStrip1";
+            // 
+            // toolStripStatusLabel1
+            // 
+            this.toolStripStatusLabel1.Name = "toolStripStatusLabel1";
+            this.toolStripStatusLabel1.Size = new System.Drawing.Size(0, 17);
+            // 
+            // toolStripStatusLabel1_count
+            // 
+            this.toolStripStatusLabel1_count.Name = "toolStripStatusLabel1_count";
+            this.toolStripStatusLabel1_count.Size = new System.Drawing.Size(0, 17);
+            // 
+            // txt_searchKey
+            // 
+            this.txt_searchKey.Location = new System.Drawing.Point(518, 24);
+            this.txt_searchKey.Name = "txt_searchKey";
+            this.txt_searchKey.Size = new System.Drawing.Size(185, 21);
+            this.txt_searchKey.TabIndex = 134;
+            // 
+            // btn_search
+            // 
+            this.btn_search.Location = new System.Drawing.Point(719, 24);
+            this.btn_search.Name = "btn_search";
+            this.btn_search.Size = new System.Drawing.Size(95, 23);
+            this.btn_search.TabIndex = 135;
+            this.btn_search.Text = "検索";
+            this.btn_search.UseVisualStyleBackColor = true;
+            this.btn_search.Click += new System.EventHandler(this.button1_Click);
+            // 
             // 学生評価
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1030, 431);
+            this.Controls.Add(this.btn_search);
+            this.Controls.Add(this.txt_searchKey);
             this.Controls.Add(this.statusStrip1);
-            this.Controls.Add(this.dtp_date);
             this.Controls.Add(this.lbl_クラス開催期間);
-            this.Controls.Add(this.lbl_評価月);
             this.Controls.Add(this.txt_クラス開催期間);
             this.Controls.Add(this.btn_今月評価追加);
             this.Controls.Add(this.cmb_クラス);
@@ -267,9 +262,7 @@
         private System.Windows.Forms.ComboBox cmb_クラス;
         private System.Windows.Forms.Label lbl_クラス;
         private System.Windows.Forms.DataGridView dgv_studentgrade;
-        private System.Windows.Forms.Label lbl_評価月;
         private System.Windows.Forms.Label lbl_クラス開催期間;
-        private System.Windows.Forms.DateTimePicker dtp_date;
         private System.Windows.Forms.StatusStrip statusStrip1;
         private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel1;
         private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel1_count;
@@ -282,5 +275,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn 担当教師;
         private System.Windows.Forms.DataGridViewTextBoxColumn 総合評価;
         private System.Windows.Forms.DataGridViewTextBoxColumn 評価年月;
+        private System.Windows.Forms.TextBox txt_searchKey;
+        private System.Windows.Forms.Button btn_search;
     }
 }

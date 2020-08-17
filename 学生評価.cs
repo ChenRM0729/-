@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
@@ -38,7 +37,6 @@ namespace HL_塾管理
             cmb_クラス.SelectedValue = code_クラス;
 
             GetClass();
-            Get_Month();
             Set_Info();
         }
 
@@ -115,16 +113,16 @@ namespace HL_塾管理
 
             try
             {
-
+                string dgv_sqlcmd = string.Empty;
                 if (flag_学生情報)
                 {
                     //データ取得開始
-                    string dgv_sqlcmd = "SELECT"
+                    dgv_sqlcmd = "SELECT"
                     + "　　T1.学生コード "
                     + "　, T2.名前　AS 学生名"
                     + "　, ( select count(*) from HL_JINJI_出勤機_登録ユーザマスタ s1　"
- 　　　　　　　　　 + "　  left outer join HL_JINJI_出勤機元記録 s2 on s1.登録コード = s2.登録コード　"
- 　　　　　　　　　 + "　　where T1.学生コード = T1.学生コード and s2.出退勤フラグ = 1 and Format(出退勤時間, 'yyyy年MM月')= T1.評価年月 ) as　出勤数"
+  + "　  left outer join HL_JINJI_出勤機元記録 s2 on s1.登録コード = s2.登録コード　"
+  + "　　where T1.学生コード = T1.学生コード and s2.出退勤フラグ = 1 and Format(出退勤時間, 'yyyy年MM月')= T1.評価年月 ) as　出勤数"
                     + "　, T1.クラスコード "
                     + "  , ( select count(*) from HL_JUKUKANRI_学生進捗 where 学生コード = T1.学生コード and 完成フラグ = 1 and Format(開始日, 'yyyy年MM月')= T1.評価年月　) as 課題完成数"
                     + "　, ( select count(*) from HL_JUKUKANRI_学生進捗 where 学生コード = T1.学生コード and Format(開始日, 'yyyy年MM月')= T1.評価年月　) as 課題数 "
@@ -136,14 +134,14 @@ namespace HL_塾管理
                     + " LEFT JOIN HL_JUKUKANRI_学生マスタ T2 ON T1.学生コード=T2.学生コード "
                     + " WHERE T1.学生コード = '" + code_学生コード + "'";
 
-                    SqlDataAdapter dgv_sqlDa = new SqlDataAdapter(dgv_sqlcmd, sqlcon);
-                    dtInfo = new DataTable();
-                    dgv_sqlDa.Fill(dtInfo);
+                    //SqlDataAdapter dgv_sqlDa = new SqlDataAdapter(dgv_sqlcmd, sqlcon);
+                    //dtInfo = new DataTable();
+                    //dgv_sqlDa.Fill(dtInfo);
                 }
                 else if (flag_クラス情報)
                 {
                     //データ取得開始
-                    string dgv_sqlcmd = "SELECT"
+                    dgv_sqlcmd = "SELECT"
                     + "　　T1.学生コード "
                     + "　, T2.名前　AS 学生名 "
                     + "　, ( select count(*) from HL_JINJI_出勤機_登録ユーザマスタ s1　"
@@ -158,31 +156,67 @@ namespace HL_塾管理
                     + " FROM "
                     + " HL_JUKUKANRI_学生評価 T1 "
                     + " LEFT JOIN HL_JUKUKANRI_学生マスタ T2　ON T1.学生コード=T2.学生コード"
-                    + " WHERE クラスコード = '" + cmb_クラス.SelectedValue + "'"
-                    + " AND 評価年月 = '" + dtp_date.Value.ToString("yyyy年MM月") + "'";
-                    SqlDataAdapter dgv_sqlDa = new SqlDataAdapter(dgv_sqlcmd, sqlcon);
-                    dtInfo = new DataTable();
-                    dgv_sqlDa.Fill(dtInfo);
+                    + " WHERE クラスコード = '" + cmb_クラス.SelectedValue + "'";
+                    //SqlDataAdapter dgv_sqlDa = new SqlDataAdapter(dgv_sqlcmd, sqlcon);
+                    //dtInfo = new DataTable();
+                    //dgv_sqlDa.Fill(dtInfo);
                 }
-                if (dtInfo.Rows.Count > 0)
-                {
-                    int rowIndex = 0;
+                dgv_sqlcmd += " ORDER BY T1.学生コード + 0 ASC";
+                SqlCommand com = new SqlCommand(dgv_sqlcmd, sqlcon);
+                SqlDataReader reader = com.ExecuteReader();
+                
+                int index = 0;
 
-                    //データ表示
-                    for (int i = 0; i < dtInfo.Rows.Count; i++)
+                while (reader.Read())
+                {
+                    if ((reader["学生コード"].ToString().IndexOf(this.txt_searchKey.Text) < 0)
+                     &&
+                     (reader["学生名"].ToString().IndexOf(this.txt_searchKey.Text) < 0)
+                     &&
+                     (reader["出勤数"].ToString().IndexOf(this.txt_searchKey.Text) < 0)
+                     &&
+                    (reader["課題完成数"].ToString().IndexOf(this.txt_searchKey.Text) < 0)
+                     &&
+                    (reader["課題数"].ToString().Replace('/', '-').IndexOf(this.txt_searchKey.Text) < 0)
+                     &&
+                    (reader["総合評価"].ToString().IndexOf(this.txt_searchKey.Text) < 0)
+                     &&
+                    (reader["授業態度"].ToString().IndexOf(this.txt_searchKey.Text) < 0)
+                     &&
+                    (reader["評価年月"].ToString().IndexOf(this.txt_searchKey.Text) < 0))
                     {
-                        this.dgv_studentgrade.Rows.Add();
-                        dgv_studentgrade.Rows[rowIndex].Cells["学生コード"].Value = dtInfo.Rows[i]["学生コード"].ToString();
-                        dgv_studentgrade.Rows[rowIndex].Cells["学生名"].Value = dtInfo.Rows[i]["学生名"].ToString();
-                        dgv_studentgrade.Rows[rowIndex].Cells["出勤数"].Value = dtInfo.Rows[i]["出勤数"].ToString()+"日";
-                        dgv_studentgrade.Rows[rowIndex].Cells["クラスコード"].Value = dtInfo.Rows[i]["クラスコード"].ToString();
-                        dgv_studentgrade.Rows[rowIndex].Cells["課題完成度"].Value = dtInfo.Rows[i]["課題完成数"].ToString() + "/" + dtInfo.Rows[i]["課題数"].ToString();
-                        dgv_studentgrade.Rows[rowIndex].Cells["総合評価"].Value = dtInfo.Rows[i]["総合評価"].ToString();
-                        dgv_studentgrade.Rows[rowIndex].Cells["授業態度"].Value = dtInfo.Rows[i]["授業態度"].ToString();
-                        dgv_studentgrade.Rows[rowIndex].Cells["評価年月"].Value = dtInfo.Rows[i]["評価年月"].ToString();
-                        rowIndex++;
+                        continue;
                     }
+                    this.dgv_studentgrade.Rows.Add();
+                    this.dgv_studentgrade.Rows[index].Cells["学生コード"].Value = reader["学生コード"].ToString();
+                    this.dgv_studentgrade.Rows[index].Cells["学生名"].Value = reader["学生名"].ToString();
+                    this.dgv_studentgrade.Rows[index].Cells["出勤数"].Value = reader["出勤数"].ToString() + "日";
+                    this.dgv_studentgrade.Rows[index].Cells["クラスコード"].Value = reader["クラスコード"].ToString();
+                    this.dgv_studentgrade.Rows[index].Cells["課題完成度"].Value = reader["課題完成数"].ToString() + "/" + reader["課題数"].ToString();
+                    this.dgv_studentgrade.Rows[index].Cells["総合評価"].Value = reader["総合評価"].ToString();
+                    this.dgv_studentgrade.Rows[index].Cells["授業態度"].Value = reader["授業態度"].ToString();
+                    this.dgv_studentgrade.Rows[index].Cells["評価年月"].Value = reader["評価年月"].ToString();
+                    index++;
                 }
+                //if (dtInfo.Rows.Count > 0)
+                //{
+                //    int rowIndex = 0;
+
+                //    //データ表示
+                //    for (int i = 0; i < dtInfo.Rows.Count; i++)
+                //    {
+                //        this.dgv_studentgrade.Rows.Add();
+                //        dgv_studentgrade.Rows[rowIndex].Cells["学生コード"].Value = dtInfo.Rows[i]["学生コード"].ToString();
+                //        dgv_studentgrade.Rows[rowIndex].Cells["学生名"].Value = dtInfo.Rows[i]["学生名"].ToString();
+                //        dgv_studentgrade.Rows[rowIndex].Cells["出勤数"].Value = dtInfo.Rows[i]["出勤数"].ToString() + "日";
+                //        dgv_studentgrade.Rows[rowIndex].Cells["クラスコード"].Value = dtInfo.Rows[i]["クラスコード"].ToString();
+                //        dgv_studentgrade.Rows[rowIndex].Cells["課題完成度"].Value = dtInfo.Rows[i]["課題完成数"].ToString() + "/" + dtInfo.Rows[i]["課題数"].ToString();
+                //        dgv_studentgrade.Rows[rowIndex].Cells["総合評価"].Value = dtInfo.Rows[i]["総合評価"].ToString();
+                //        dgv_studentgrade.Rows[rowIndex].Cells["授業態度"].Value = dtInfo.Rows[i]["授業態度"].ToString();
+                //        dgv_studentgrade.Rows[rowIndex].Cells["評価年月"].Value = dtInfo.Rows[i]["評価年月"].ToString();
+                //        rowIndex++;
+                //    }
+                //}
                 //件数表示
                 this.toolStripStatusLabel1.Text = string.Format("{0}件", dtInfo.Rows.Count);
                 ((Form1)(this.Tag)).reLoad = true;
@@ -203,69 +237,6 @@ namespace HL_塾管理
 
         }
 
-        public void Get_Month()
-        {
-            SqlConnection sqlcon = new SqlConnection(connectionString); //连接数据库
-
-            try
-            {
-                sqlcon.Open();
-            }
-            catch
-            {
-                this.toolStripStatusLabel1.ForeColor = Color.Red;
-                this.toolStripStatusLabel1.Text = "DBサーバーの接続に失敗しました";
-                return;
-            }
-            try
-            {
-                //最終月
-                DateTime Dattime_End = DateTime.Now;
-                //データ取得開始
-                string str_sqlcmd = "SELECT"
-                + "　　クラスコード "
-                + "　, クラス名  "
-                + "　, 学生コード "
-                + "　, 開始日  "
-                + "　, 終了日  "
-                + " FROM "
-                + " HL_JUKUKANRI_クラス履歴 "
-                + " WHERE クラスコード = '" + cmb_クラス.SelectedValue + "'";
-                SqlDataAdapter sqlDa = new SqlDataAdapter(str_sqlcmd, sqlcon);
-                dtInfo = new DataTable();
-                sqlDa.Fill(dtInfo);
-
-                //終了したクラスの評価月は最終月を表示する
-
-                Dattime_End = Convert.ToDateTime(dtInfo.Rows[0].Field<string>("終了日"));
-                int date_now_month = Convert.ToInt32(DateTime.Now.ToString("yyyyMM"));
-                int date_end_month = Convert.ToInt32(Dattime_End.ToString("yyyyMM"));
-                if (date_end_month < date_now_month)
-                {
-                    dtp_date.Value = Dattime_End;
-                }
-                //if (flag_クラス情報)
-                //{
-
-                //    code_学生コード = dtInfo.Rows[0].Field<string>("学生コード");
-                //}
-                txt_クラス開催期間.Text = dtInfo.Rows[0].Field<string>("開始日") + "～" + dtInfo.Rows[0].Field<string>("終了日");
-            }
-            catch (Exception ee)
-            {
-                this.toolStripStatusLabel1.ForeColor = Color.Red;
-                this.toolStripStatusLabel1.Text = ee.ToString();
-                return;
-            }
-            finally
-            {
-                if (sqlcon != null)
-                {
-                    sqlcon.Close();
-                }
-            }
-
-        }
         private void btn_今月評価追加_Click(object sender, EventArgs e)
         {
 
@@ -273,7 +244,7 @@ namespace HL_塾管理
             m_NewForm_学生評価追加.code_学生コード = code_学生コード;
             m_NewForm_学生評価追加.code_クラス = code_クラス;
             m_NewForm_学生評価追加.flag_学生情報 = flag_学生情報;
-            m_NewForm_学生評価追加.flag_クラス情報= flag_クラス情報;
+            m_NewForm_学生評価追加.flag_クラス情報 = flag_クラス情報;
             m_NewForm_学生評価追加.Tag = ((Form1)(this.Tag));
             m_NewForm_学生評価追加.Show(((Form1)(this.Tag)).dockPanel1);
             ((Form1)(this.Tag)).m_学生評価追加Handle = m_NewForm_学生評価追加.Handle;
@@ -404,6 +375,11 @@ namespace HL_塾管理
         private void 学生評価_FormClosed(object sender, FormClosedEventArgs e)
         {
             ((Form1)(this.Tag)).m_学生評価Handle = IntPtr.Zero;
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Set_Info();
         }
     }
 }
