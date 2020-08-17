@@ -692,6 +692,16 @@ namespace HL_塾管理
             {
                 e.Cancel = true;
             }
+            if(rowMergeView1.CurrentRow.Cells["クラス名"].ReadOnly == true)
+            {
+                学生評価toolStripMenuItem.Enabled = false;
+                進捗一覧ToolStripMenuItem.Enabled = false;
+            }
+            else
+            {
+                学生評価toolStripMenuItem.Enabled = true;
+                進捗一覧ToolStripMenuItem.Enabled = true;
+            }
         }
 
         /// <summary>
