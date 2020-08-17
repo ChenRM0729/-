@@ -218,11 +218,11 @@
     <Compile Include="課題分配.Designer.cs">
       <DependentUpon>課題分配.cs</DependentUpon>
     </Compile>
-    <Compile Include="宿題履歴.cs">
+    <Compile Include="課題履歴.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="宿題履歴.Designer.cs">
-      <DependentUpon>宿題履歴.cs</DependentUpon>
+    <Compile Include="課題履歴.Designer.cs">
+      <DependentUpon>課題履歴.cs</DependentUpon>
     </Compile>
     <Compile Include="課題追加.cs">
       <SubType>Form</SubType>
@@ -408,8 +408,8 @@
     <EmbeddedResource Include="課題分配.resx">
       <DependentUpon>課題分配.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="宿題履歴.resx">
-      <DependentUpon>宿題履歴.cs</DependentUpon>
+    <EmbeddedResource Include="課題履歴.resx">
+      <DependentUpon>課題履歴.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="課題追加.resx">
       <DependentUpon>課題追加.cs</DependentUpon>
