@@ -144,7 +144,7 @@ namespace HL_塾管理
         //end
         学生評価 m_NewForm_学生評価Handle = new 学生評価();
         学生評価追加 m_NewForm_学生評価追加Handle = new 学生評価追加();
-        宿題履歴 m_NewForm_宿題履歴Handle = new 宿題履歴();
+        課題履歴 m_NewForm_宿題履歴Handle = new 課題履歴();
         課題追加 m_NewForm_課題追加Handle = new 課題追加();
         課題分配 m_NewForm_課題分配Handle = new 課題分配();
 
