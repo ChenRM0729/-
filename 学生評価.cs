@@ -121,8 +121,8 @@ namespace HL_塾管理
                     + "　　T1.学生コード "
                     + "　, T2.名前　AS 学生名"
                     + "　, ( select count(*) from HL_JINJI_出勤機_登録ユーザマスタ s1　"
-  + "　  left outer join HL_JINJI_出勤機元記録 s2 on s1.登録コード = s2.登録コード　"
-  + "　　where T1.学生コード = T1.学生コード and s2.出退勤フラグ = 1 and Format(出退勤時間, 'yyyy年MM月')= T1.評価年月 ) as　出勤数"
+                    + "　  left outer join HL_JINJI_出勤機元記録 s2 on s1.登録コード = s2.登録コード　"
+                    + "　　where 学生コード = T1.学生コード and s2.出退勤フラグ = 1 and Format(出退勤時間, 'yyyy年MM月')= T1.評価年月 ) as　出勤数"
                     + "　, T1.クラスコード "
                     + "  , ( select count(*) from HL_JUKUKANRI_学生進捗 where 学生コード = T1.学生コード and 完成フラグ = 1 and Format(開始日, 'yyyy年MM月')= T1.評価年月　) as 課題完成数"
                     + "　, ( select count(*) from HL_JUKUKANRI_学生進捗 where 学生コード = T1.学生コード and Format(開始日, 'yyyy年MM月')= T1.評価年月　) as 課題数 "
@@ -198,25 +198,7 @@ namespace HL_塾管理
                     this.dgv_studentgrade.Rows[index].Cells["評価年月"].Value = reader["評価年月"].ToString();
                     index++;
                 }
-                //if (dtInfo.Rows.Count > 0)
-                //{
-                //    int rowIndex = 0;
-
-                //    //データ表示
-                //    for (int i = 0; i < dtInfo.Rows.Count; i++)
-                //    {
-                //        this.dgv_studentgrade.Rows.Add();
-                //        dgv_studentgrade.Rows[rowIndex].Cells["学生コード"].Value = dtInfo.Rows[i]["学生コード"].ToString();
-                //        dgv_studentgrade.Rows[rowIndex].Cells["学生名"].Value = dtInfo.Rows[i]["学生名"].ToString();
-                //        dgv_studentgrade.Rows[rowIndex].Cells["出勤数"].Value = dtInfo.Rows[i]["出勤数"].ToString() + "日";
-                //        dgv_studentgrade.Rows[rowIndex].Cells["クラスコード"].Value = dtInfo.Rows[i]["クラスコード"].ToString();
-                //        dgv_studentgrade.Rows[rowIndex].Cells["課題完成度"].Value = dtInfo.Rows[i]["課題完成数"].ToString() + "/" + dtInfo.Rows[i]["課題数"].ToString();
-                //        dgv_studentgrade.Rows[rowIndex].Cells["総合評価"].Value = dtInfo.Rows[i]["総合評価"].ToString();
-                //        dgv_studentgrade.Rows[rowIndex].Cells["授業態度"].Value = dtInfo.Rows[i]["授業態度"].ToString();
-                //        dgv_studentgrade.Rows[rowIndex].Cells["評価年月"].Value = dtInfo.Rows[i]["評価年月"].ToString();
-                //        rowIndex++;
-                //    }
-                //}
+      
                 //件数表示
                 this.toolStripStatusLabel1.Text = string.Format("{0}件", dtInfo.Rows.Count);
                 ((Form1)(this.Tag)).reLoad = true;
