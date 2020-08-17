@@ -35,21 +35,21 @@
             this.cmb_クラス = new System.Windows.Forms.ComboBox();
             this.lbl_クラス = new System.Windows.Forms.Label();
             this.dgv_studentgrade = new System.Windows.Forms.DataGridView();
-            this.学生コード = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.学生名 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.宿題完成度 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.クラスコード = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.出勤数 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.授業態度 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.担当教師 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.総合評価 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.評価年月 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.lbl_評価月 = new System.Windows.Forms.Label();
             this.lbl_クラス開催期間 = new System.Windows.Forms.Label();
             this.dtp_date = new System.Windows.Forms.DateTimePicker();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolStripStatusLabel1_count = new System.Windows.Forms.ToolStripStatusLabel();
+            this.学生コード = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.学生名 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.課題完成度 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.クラスコード = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.出勤数 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.授業態度 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.担当教師 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.総合評価 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.評価年月 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_studentgrade)).BeginInit();
             this.statusStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -100,7 +100,7 @@
             this.dgv_studentgrade.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.学生コード,
             this.学生名,
-            this.宿題完成度,
+            this.課題完成度,
             this.クラスコード,
             this.出勤数,
             this.授業態度,
@@ -115,70 +115,6 @@
             this.dgv_studentgrade.CellBeginEdit += new System.Windows.Forms.DataGridViewCellCancelEventHandler(this.dgv_studentgrade_CellBeginEdit);
             this.dgv_studentgrade.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_studentgrade_CellEndEdit);
             this.dgv_studentgrade.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_studentgrade_CellValueChanged);
-            // 
-            // 学生コード
-            // 
-            this.学生コード.Frozen = true;
-            this.学生コード.HeaderText = "学生コード";
-            this.学生コード.Name = "学生コード";
-            this.学生コード.ReadOnly = true;
-            // 
-            // 学生名
-            // 
-            this.学生名.Frozen = true;
-            this.学生名.HeaderText = "学生名";
-            this.学生名.Name = "学生名";
-            this.学生名.ReadOnly = true;
-            // 
-            // 宿題完成度
-            // 
-            this.宿題完成度.Frozen = true;
-            this.宿題完成度.HeaderText = "宿題完成度";
-            this.宿題完成度.Name = "宿題完成度";
-            this.宿題完成度.ReadOnly = true;
-            // 
-            // クラスコード
-            // 
-            this.クラスコード.Frozen = true;
-            this.クラスコード.HeaderText = "クラスコード";
-            this.クラスコード.Name = "クラスコード";
-            this.クラスコード.ReadOnly = true;
-            this.クラスコード.Visible = false;
-            // 
-            // 出勤数
-            // 
-            this.出勤数.HeaderText = "出勤数";
-            this.出勤数.Name = "出勤数";
-            this.出勤数.ReadOnly = true;
-            // 
-            // 授業態度
-            // 
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.Aqua;
-            this.授業態度.DefaultCellStyle = dataGridViewCellStyle1;
-            this.授業態度.HeaderText = "授業態度";
-            this.授業態度.Name = "授業態度";
-            this.授業態度.Width = 200;
-            // 
-            // 担当教師
-            // 
-            this.担当教師.HeaderText = "担当教師";
-            this.担当教師.Name = "担当教師";
-            this.担当教師.ReadOnly = true;
-            this.担当教師.Visible = false;
-            // 
-            // 総合評価
-            // 
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.Aqua;
-            this.総合評価.DefaultCellStyle = dataGridViewCellStyle2;
-            this.総合評価.HeaderText = "総合評価";
-            this.総合評価.Name = "総合評価";
-            this.総合評価.Width = 200;
-            // 
-            // 評価年月
-            // 
-            this.評価年月.HeaderText = "評価年月";
-            this.評価年月.Name = "評価年月";
-            this.評価年月.ReadOnly = true;
             // 
             // lbl_評価月
             // 
@@ -233,6 +169,70 @@
             this.toolStripStatusLabel1_count.Name = "toolStripStatusLabel1_count";
             this.toolStripStatusLabel1_count.Size = new System.Drawing.Size(0, 17);
             // 
+            // 学生コード
+            // 
+            this.学生コード.Frozen = true;
+            this.学生コード.HeaderText = "学生コード";
+            this.学生コード.Name = "学生コード";
+            this.学生コード.ReadOnly = true;
+            // 
+            // 学生名
+            // 
+            this.学生名.Frozen = true;
+            this.学生名.HeaderText = "学生名";
+            this.学生名.Name = "学生名";
+            this.学生名.ReadOnly = true;
+            // 
+            // 課題完成度
+            // 
+            this.課題完成度.Frozen = true;
+            this.課題完成度.HeaderText = "宿題完成度";
+            this.課題完成度.Name = "課題完成度";
+            this.課題完成度.ReadOnly = true;
+            // 
+            // クラスコード
+            // 
+            this.クラスコード.Frozen = true;
+            this.クラスコード.HeaderText = "クラスコード";
+            this.クラスコード.Name = "クラスコード";
+            this.クラスコード.ReadOnly = true;
+            this.クラスコード.Visible = false;
+            // 
+            // 出勤数
+            // 
+            this.出勤数.HeaderText = "出勤数";
+            this.出勤数.Name = "出勤数";
+            this.出勤数.ReadOnly = true;
+            // 
+            // 授業態度
+            // 
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.Aqua;
+            this.授業態度.DefaultCellStyle = dataGridViewCellStyle1;
+            this.授業態度.HeaderText = "授業態度";
+            this.授業態度.Name = "授業態度";
+            this.授業態度.Width = 200;
+            // 
+            // 担当教師
+            // 
+            this.担当教師.HeaderText = "担当教師";
+            this.担当教師.Name = "担当教師";
+            this.担当教師.ReadOnly = true;
+            this.担当教師.Visible = false;
+            // 
+            // 総合評価
+            // 
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.Aqua;
+            this.総合評価.DefaultCellStyle = dataGridViewCellStyle2;
+            this.総合評価.HeaderText = "総合評価";
+            this.総合評価.Name = "総合評価";
+            this.総合評価.Width = 200;
+            // 
+            // 評価年月
+            // 
+            this.評価年月.HeaderText = "評価年月";
+            this.評価年月.Name = "評価年月";
+            this.評価年月.ReadOnly = true;
+            // 
             // 学生評価
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -275,7 +275,7 @@
         private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel1_count;
         private System.Windows.Forms.DataGridViewTextBoxColumn 学生コード;
         private System.Windows.Forms.DataGridViewTextBoxColumn 学生名;
-        private System.Windows.Forms.DataGridViewTextBoxColumn 宿題完成度;
+        private System.Windows.Forms.DataGridViewTextBoxColumn 課題完成度;
         private System.Windows.Forms.DataGridViewTextBoxColumn クラスコード;
         private System.Windows.Forms.DataGridViewTextBoxColumn 出勤数;
         private System.Windows.Forms.DataGridViewTextBoxColumn 授業態度;
