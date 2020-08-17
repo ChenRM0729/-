@@ -357,6 +357,11 @@ namespace HL_塾管理
         private void 学生評価_FormClosed(object sender, FormClosedEventArgs e)
         {
             ((Form1)(this.Tag)).m_学生評価Handle = IntPtr.Zero;
+            if (((Form1)(this.Tag)).codeDic.ContainsKey(code_学生コード))
+            {
+                ((Form1)(this.Tag)).codeDic.Remove(code_学生コード);
+            }
+          
         }
 
         private void button1_Click(object sender, EventArgs e)
