@@ -36,11 +36,7 @@ namespace HL_塾管理
         private void 学生評価_Load(object sender, EventArgs e)
         {
             cmb_クラス.SelectedValue = code_クラス;
-            if(flag_学生情報)
-            {
-                dtp_date.Visible = false;
-                lbl_評価月.Visible = false;
-            }
+
             GetClass();
             Get_Month();
             Set_Info();
