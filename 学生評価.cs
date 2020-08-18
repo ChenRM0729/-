@@ -368,5 +368,50 @@ namespace HL_塾管理
         {
             Set_Info();
         }
+
+
+        private void dgv_studentgrade_CellMouseDown(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            if (e.Button == MouseButtons.Right)
+            {
+                if (e.RowIndex >= 0 && e.ColumnIndex >= 0)
+                {
+                    if ((this.dgv_studentgrade.Rows[e.RowIndex].Selected == false))
+                    {
+                        this.dgv_studentgrade.ClearSelection();
+                        this.dgv_studentgrade.Rows[e.RowIndex].Selected = true;
+                    }
+                    //'只选中一行时设置活动单元格
+                    if ((this.dgv_studentgrade.SelectedRows.Count == 1))
+                    {
+                        this.dgv_studentgrade.CurrentCell = this.dgv_studentgrade.Rows[e.RowIndex].Cells[e.ColumnIndex];
+                    }
+                    if (e.ColumnIndex==2)
+                    {
+                        contextMenuStrip1.Show();
+                    }
+
+                }
+            }
+        }
+
+        private void 課題履歴contextMenuStrip_Opening(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+            System.Drawing.Point startPosition = Cursor.Position;
+
+            System.Drawing.Point point = dgv_studentgrade.PointToClient(startPosition);
+            DataGridView.HitTestInfo hitinfo;
+            hitinfo = dgv_studentgrade.HitTest(point.X, point.Y);
+
+            dgv_studentgrade.ClearSelection();
+            if (hitinfo.RowIndex >= 0)
+            {
+                dgv_studentgrade.Rows[hitinfo.RowIndex].Selected = true;
+            }
+            else
+            {
+                e.Cancel = true;
+            }
+        }
     }
 }

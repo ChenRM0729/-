@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.txt_クラス開催期間 = new System.Windows.Forms.Label();
@@ -50,8 +51,11 @@
             this.toolStripStatusLabel1_count = new System.Windows.Forms.ToolStripStatusLabel();
             this.txt_searchKey = new System.Windows.Forms.TextBox();
             this.btn_search = new System.Windows.Forms.Button();
+            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.課題履歴toolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_studentgrade)).BeginInit();
             this.statusStrip1.SuspendLayout();
+            this.contextMenuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // txt_クラス開催期間
@@ -114,6 +118,7 @@
             this.dgv_studentgrade.TabIndex = 20;
             this.dgv_studentgrade.CellBeginEdit += new System.Windows.Forms.DataGridViewCellCancelEventHandler(this.dgv_studentgrade_CellBeginEdit);
             this.dgv_studentgrade.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_studentgrade_CellEndEdit);
+            this.dgv_studentgrade.CellMouseDown += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgv_studentgrade_CellMouseDown);
             this.dgv_studentgrade.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_studentgrade_CellValueChanged);
             // 
             // 学生コード
@@ -228,6 +233,21 @@
             this.btn_search.UseVisualStyleBackColor = true;
             this.btn_search.Click += new System.EventHandler(this.button1_Click);
             // 
+            // contextMenuStrip1
+            // 
+            this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.課題履歴toolStripMenuItem});
+            this.contextMenuStrip1.Name = "課題履歴contextMenuStrip";
+            this.contextMenuStrip1.Size = new System.Drawing.Size(181, 48);
+            this.contextMenuStrip1.Text = "contextMenuStrip1";
+            this.contextMenuStrip1.Opening += new System.ComponentModel.CancelEventHandler(this.課題履歴contextMenuStrip_Opening);
+            // 
+            // 課題履歴toolStripMenuItem
+            // 
+            this.課題履歴toolStripMenuItem.Name = "課題履歴toolStripMenuItem";
+            this.課題履歴toolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.課題履歴toolStripMenuItem.Text = "課題履歴";
+            // 
             // 学生評価
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -250,6 +270,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgv_studentgrade)).EndInit();
             this.statusStrip1.ResumeLayout(false);
             this.statusStrip1.PerformLayout();
+            this.contextMenuStrip1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -277,5 +298,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn 評価年月;
         private System.Windows.Forms.TextBox txt_searchKey;
         private System.Windows.Forms.Button btn_search;
+        private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem 課題履歴toolStripMenuItem;
     }
 }
