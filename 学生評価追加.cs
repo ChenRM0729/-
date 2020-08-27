@@ -108,7 +108,7 @@ namespace HL_塾管理
                 }
                 else
                 {
-                    ((Form1)(this.Tag)).toolStripStatusLabel2.ForeColor = Color.Green;
+                    ((Form1)(this.Tag)).toolStripStatusLabel2.ForeColor = Color.Red;
                     ((Form1)(this.Tag)).toolStripStatusLabel2.Text = "本月の評価はすでに登録しました";
                 }
             }
