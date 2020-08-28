@@ -47,7 +47,8 @@ namespace HL_塾管理
         public IntPtr m_社員から教師へ変更Handle = IntPtr.Zero;
         public IntPtr m_課題分配Handle = IntPtr.Zero;
         public IntPtr m_課題追加Handle = IntPtr.Zero;
-
+        public IntPtr m_出勤一覧Handle = IntPtr.Zero;
+       
         //end
 
         //liuxiaoyan add 20200420
@@ -83,8 +84,11 @@ namespace HL_塾管理
         //end
         public IntPtr m_学生評価Handle = IntPtr.Zero;
         public IntPtr m_学生評価追加Handle = IntPtr.Zero;
-        public IntPtr m_宿題履歴Handle = IntPtr.Zero;
-
+        public IntPtr m_課題履歴Handle = IntPtr.Zero;
+        public IntPtr m_個人課題分配Handle = IntPtr.Zero;
+        //wangqian add 20200827
+        public IntPtr m_進捗記録Handle = IntPtr.Zero;
+        //end
         public Dictionary<string, int> codeDic = new Dictionary<string, int>();
         public ユーザ登録 m_ユーザ登録 = null;
         public bool reLoad = true;
@@ -147,7 +151,7 @@ namespace HL_塾管理
         課題履歴 m_NewForm_宿題履歴Handle = new 課題履歴();
         課題追加 m_NewForm_課題追加Handle = new 課題追加();
         課題分配 m_NewForm_課題分配Handle = new 課題分配();
-
+        進捗記録 m_NewForm_進捗記録Handle = new 進捗記録();
         public Form1()
         {
             InitializeComponent();
@@ -790,7 +794,7 @@ namespace HL_塾管理
             }
 
             m_NewForm_学生進捗一覧 = new 学生進捗一覧();
-            m_NewForm_学生進捗一覧.isFlag = "教師";
+            m_NewForm_学生進捗一覧.isFlag = m_ユーザ登録.m_ログイン_職務;
             m_NewForm_学生進捗一覧.Tag = this;
             m_NewForm_学生進捗一覧.Show(this.dockPanel1);
             this.m_学生進捗一覧Handle = m_NewForm_学生進捗一覧.Handle;

@@ -58,7 +58,6 @@
             this.学生情報一覧ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.新規学生入塾ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.学生進捗一覧ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.課題一覧ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.出勤機ユーザToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.出勤機学生登録ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.出勤機学生一覧ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -83,6 +82,7 @@
             this.このうんどToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.dockPanel1 = new WeifenLuo.WinFormsUI.Docking.DockPanel();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
+            this.課題一覧ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.statusStrip1.SuspendLayout();
             this.contextMenuStrip1.SuspendLayout();
@@ -173,8 +173,7 @@
             this.学生管理ToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.学生情報一覧ToolStripMenuItem,
             this.新規学生入塾ToolStripMenuItem,
-            this.学生進捗一覧ToolStripMenuItem,
-            this.課題一覧ToolStripMenuItem});
+            this.学生進捗一覧ToolStripMenuItem});
             this.学生管理ToolStripMenuItem.Name = "学生管理ToolStripMenuItem";
             this.学生管理ToolStripMenuItem.Size = new System.Drawing.Size(81, 24);
             this.学生管理ToolStripMenuItem.Text = "学生管理";
@@ -199,13 +198,6 @@
             this.学生進捗一覧ToolStripMenuItem.Size = new System.Drawing.Size(181, 26);
             this.学生進捗一覧ToolStripMenuItem.Text = "学生進捗一覧";
             this.学生進捗一覧ToolStripMenuItem.Click += new System.EventHandler(this.学生進捗一覧ToolStripMenuItem1_Click);
-            // 
-            // 課題一覧ToolStripMenuItem
-            // 
-            this.課題一覧ToolStripMenuItem.Name = "課題一覧ToolStripMenuItem";
-            this.課題一覧ToolStripMenuItem.Size = new System.Drawing.Size(181, 26);
-            this.課題一覧ToolStripMenuItem.Text = "課題一覧";
-            this.課題一覧ToolStripMenuItem.Click += new System.EventHandler(this.課題一覧ToolStripMenuItem1_Click);
             // 
             // 出勤機ユーザToolStripMenuItem
             // 
@@ -281,7 +273,8 @@
             // 
             this.クラス情報管理ToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.新規クラスToolStripMenuItem,
-            this.クラス参照ToolStripMenuItem});
+            this.クラス参照ToolStripMenuItem,
+            this.課題一覧ToolStripMenuItem});
             this.クラス情報管理ToolStripMenuItem.Name = "クラス情報管理ToolStripMenuItem";
             this.クラス情報管理ToolStripMenuItem.Size = new System.Drawing.Size(96, 24);
             this.クラス情報管理ToolStripMenuItem.Text = "クラス管理";
@@ -434,6 +427,13 @@
             dockPanelSkin1.DockPaneStripSkin = dockPaneStripSkin1;
             this.dockPanel1.Skin = dockPanelSkin1;
             this.dockPanel1.TabIndex = 4;
+            // 
+            // 課題一覧ToolStripMenuItem
+            // 
+            this.課題一覧ToolStripMenuItem.Name = "課題一覧ToolStripMenuItem";
+            this.課題一覧ToolStripMenuItem.Size = new System.Drawing.Size(181, 26);
+            this.課題一覧ToolStripMenuItem.Text = "課題一覧";
+            this.課題一覧ToolStripMenuItem.Click += new System.EventHandler(this.課題一覧ToolStripMenuItem1_Click);
             // 
             // Form1
             // 
